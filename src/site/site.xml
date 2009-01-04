@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Jakarta Taglibs">
+  <bannerLeft>
+    <name>Jakarta</name>
+    <src>http://jakarta.apache.org/taglibs/images/jakarta-logo.gif</src>
+    <href>http://jakarta.apache.org/</href>
+  </bannerLeft>
+  <bannerRight>
+    <name>Jakarta Taglibs</name>
+    <src>http://jakarta.apache.org/taglibs/images/taglibs.gif</src> <!-- fix with relative -->
+    <href>http://jakarta.apache.org/taglibs/</href>
+  </bannerRight>
+  <publishDate format="dd MMMM yyyy" position="left" />
+  <!--
+  <skin>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-skin</artifactId>
+    <version>2</version>
+  </skin>
+  -->
+  <body>
+    <links>
+      <item name="ApacheCon" href="http://www.apachecon.com/"/>
+      <item name="Apache"  href="http://www.apache.org"/>
+      <item name="Jakarta" href="http://jakarta.apache.org/" />
+    </links>
+    <menu name="Commons" inherit="bottom">
+      <item name="Home"                  href="http://jakarta.apache.org/taglibs/" />
+      <item name="Components"            href="http://jakarta.apache.org/taglibs/components.html" collapse="true">
+        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/components.html" />
+      </item> 
+      <item name="Sandbox"               href="http://jakarta.apache.org/taglibs/sandbox/index.html" collapse="true">
+        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/sandbox/index.html" />
+      </item>
+      <item name="Dormant"               href="http://jakarta.apache.org/taglibs/dormant/index.html" collapse="true">
+        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/dormant/index.html" />
+      </item>
+      <item name="Volunteering"          href="http://jakarta.apache.org/taglibs/volunteering.html" />
+      <item name="Contributing Patches"  href="http://jakarta.apache.org/taglibs/patches.html" />
+      <item name="Building Components"   href="http://jakarta.apache.org/taglibs/building.html" />
+      <item name="Releasing Components"  href="http://jakarta.apache.org/taglibs/releases/index.html" />
+      <item name="Wiki"                  href="http://wiki.apache.org/jakarta-taglibs/FrontPage" />
+    </menu>
+    <menu name="ASF" inherit="bottom">
+      <item name="Sponsorship"           href="http://www.apache.org/foundation/sponsorship.html" />
+      <item name="Thanks"                href="http://www.apache.org/foundation/thanks.html" />
+    </menu>
+  </body>
+</project>
