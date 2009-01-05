@@ -23,7 +23,7 @@
       <item name="Jakarta" href="http://jakarta.apache.org/" />
     </links>
     <menu name="Jakarta Taglibs">
-      <item name="Home"                  href="http://jakarta.apache.org/taglibs/" />
+      <item name="Home"                  href="/" />
       <item name="Downloads"             href="http://jakarta.apache.org/site/downloads/downloads_taglibs.html" />
       <item name="Using"                 href="using.html" />
       <item name="Taglib Tutorial"       href="tutorial.html" />
