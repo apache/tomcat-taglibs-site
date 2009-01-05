@@ -11,37 +11,43 @@
     <href>http://jakarta.apache.org/taglibs/</href>
   </bannerRight>
   <publishDate format="dd MMMM yyyy" position="left" />
-  <!--
   <skin>
     <groupId>org.apache.commons</groupId>
     <artifactId>commons-skin</artifactId>
     <version>2</version>
   </skin>
-  -->
   <body>
     <links>
       <item name="ApacheCon" href="http://www.apachecon.com/"/>
       <item name="Apache"  href="http://www.apache.org"/>
       <item name="Jakarta" href="http://jakarta.apache.org/" />
     </links>
-    <menu name="Commons" inherit="bottom">
+    <menu name="Jakarta Taglibs">
       <item name="Home"                  href="http://jakarta.apache.org/taglibs/" />
-      <item name="Components"            href="http://jakarta.apache.org/taglibs/components.html" collapse="true">
-        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/components.html" />
-      </item> 
-      <item name="Sandbox"               href="http://jakarta.apache.org/taglibs/sandbox/index.html" collapse="true">
-        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/sandbox/index.html" />
-      </item>
-      <item name="Dormant"               href="http://jakarta.apache.org/taglibs/dormant/index.html" collapse="true">
-        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/dormant/index.html" />
-      </item>
+      <item name="Downloads"             href="http://jakarta.apache.org/site/downloads/downloads_taglibs.html" />
+      <item name="Using"                 href="binarydist.html" />
+      <item name="Taglib Tutorial"       href="tutorial.html" />
+      <item name="Reporting Bugs"        href="bugs.html" />
+    </menu>
+    <menu name="Digging into Jakarta Taglibs">
       <item name="Volunteering"          href="http://jakarta.apache.org/taglibs/volunteering.html" />
       <item name="Contributing Patches"  href="http://jakarta.apache.org/taglibs/patches.html" />
       <item name="Building Components"   href="http://jakarta.apache.org/taglibs/building.html" />
       <item name="Releasing Components"  href="http://jakarta.apache.org/taglibs/releases/index.html" />
       <item name="Wiki"                  href="http://wiki.apache.org/jakarta-taglibs/FrontPage" />
     </menu>
-    <menu name="ASF" inherit="bottom">
+    <menu name="JSP Taglibs">
+      <item name="JSP 2.0 Taglibs"       href="http://jakarta.apache.org/taglibs/components.html" collapse="true">
+        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/components.html" />
+      </item> 
+      <item name="JSP 1.2 Taglibs"       href="http://jakarta.apache.org/taglibs/sandbox/index.html" collapse="true">
+        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/sandbox/index.html" />
+      </item>
+      <item name="Dormant"               href="http://jakarta.apache.org/taglibs/dormant/index.html" collapse="true">
+        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/dormant/index.html" />
+      </item>
+    </menu>
+    <menu name="ASF">
       <item name="Sponsorship"           href="http://www.apache.org/foundation/sponsorship.html" />
       <item name="Thanks"                href="http://www.apache.org/foundation/thanks.html" />
     </menu>
