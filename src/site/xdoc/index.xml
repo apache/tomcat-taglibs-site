@@ -18,8 +18,8 @@
 
 <document>
   <properties>
-    <title>Contributors</title>
-    <author email="dev@commons.apache.org">Commons Documentation Team</author>
+    <title>Jakarta Taglibs</title>
+    <author email="taglibs-dev@jakarta.apache.org">Jakarta Taglibs Team</author>
   </properties>
   <body>
     <section name="Jakarta Taglibs">
