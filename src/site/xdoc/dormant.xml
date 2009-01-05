@@ -25,27 +25,27 @@
     <section name="Deprecated Taglibs">
      <table>
       <tr><th>Name</th><th>JSP version</th></tr>
-      <tr><td><a href="sandbox/doc/mailer2-doc/intro.html">Mailer 2</a></td><td>2.0+</td></tr>
-      <tr><td><a href="doc/cache-doc/intro.html">Cache</a></td><td>1.2+</td></tr>
-      <tr><td><a href="sandbox/doc/datagrid-doc/intro.html">Data Grid</a></td><td>1.2+</td></tr>
-      <tr><td><a href="doc/application-doc/intro.html">Application</a></td><td>1.1+</td></tr>
-      <tr><td><a href="doc/benchmark-doc/intro.html">Benchmark</a></td><td>1.1+</td></tr>
-      <tr><td><a href="doc/bsf-doc/intro.html">BSF</a></td><td>1.1+</td></tr>
-      <tr><td><a href="doc/dbtags-doc/intro.html">DBTags</a></td><td>1.1+</td></tr>
-      <tr><td><a href="sandbox/doc/image-doc/intro.html">Image</a></td><td>1.1+</td></tr>    
-      <tr><td><a href="doc/input-doc/intro.html">Input</a></td><td>1.1+</td></tr>
-      <tr><td><a href="doc/io-doc/intro.html">IO</a></td><td>1.1+</td></tr>
-      <tr><td><a href="doc/jmstags-doc/intro.html">JMS</a></td><td>1.1+</td></tr>
-      <tr><td><a href="doc/mailer-doc/intro.html">Mailer</a></td><td>1.1+</td></tr>
-      <tr><td><a href="doc/page-doc/intro.html">Page</a></td><td>1.1+</td></tr>
-      <tr><td><a href="doc/request-doc/intro.html">Request</a></td><td>1.1+</td></tr>
-      <tr><td><a href="doc/response-doc/intro.html">Response</a></td><td>1.1+</td></tr>
-      <tr><td><a href="doc/scrape-doc/intro.html">Scrape</a></td><td>1.1+</td></tr>      
-      <tr><td><a href="doc/session-doc/intro.html">Session</a></td><td>1.1+</td></tr>
-      <tr><td><a href="doc/ultradev4-doc/intro.html">UltraDev 4.0 Tool Extension</a></td><td>1.1+</td></tr>
-      <tr><td><a href="doc/utility-doc/intro.html">Utility</a></td><td>1.1+</td></tr>
-      <tr><td><a href="doc/xsl-doc/intro.html">XSL</a></td><td>1.1+</td></tr>
-      <tr><td><a href="doc/xtags-doc/intro.html">XTags</a></td><td>1.1+</td></tr>      
+      <tr><td><a href="../sandbox/doc/mailer2-doc/intro.html">Mailer 2</a></td><td>2.0+</td></tr>
+      <tr><td><a href="../doc/cache-doc/intro.html">Cache</a></td><td>1.2+</td></tr>
+      <tr><td><a href="../sandbox/doc/datagrid-doc/intro.html">Data Grid</a></td><td>1.2+</td></tr>
+      <tr><td><a href="../doc/application-doc/intro.html">Application</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../doc/benchmark-doc/intro.html">Benchmark</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../doc/bsf-doc/intro.html">BSF</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../doc/dbtags-doc/intro.html">DBTags</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../sandbox/doc/image-doc/intro.html">Image</a></td><td>1.1+</td></tr>    
+      <tr><td><a href="../doc/input-doc/intro.html">Input</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../doc/io-doc/intro.html">IO</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../doc/jmstags-doc/intro.html">JMS</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../doc/mailer-doc/intro.html">Mailer</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../doc/page-doc/intro.html">Page</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../doc/request-doc/intro.html">Request</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../doc/response-doc/intro.html">Response</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../doc/scrape-doc/intro.html">Scrape</a></td><td>1.1+</td></tr>      
+      <tr><td><a href="../doc/session-doc/intro.html">Session</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../doc/ultradev4-doc/intro.html">UltraDev 4.0 Tool Extension</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../doc/utility-doc/intro.html">Utility</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../doc/xsl-doc/intro.html">XSL</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../doc/xtags-doc/intro.html">XTags</a></td><td>1.1+</td></tr>      
      </table>
     </section>
   </body>

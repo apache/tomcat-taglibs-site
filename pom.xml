@@ -31,6 +31,8 @@
   <name>Jakarta Taglibs Site</name>
   <packaging>pom</packaging>  <!-- site? -->
 
+  <url>http://jakarta.apache.org/taglibs/site/</url>
+
   <inceptionYear>2009</inceptionYear>
 
   <scm>
