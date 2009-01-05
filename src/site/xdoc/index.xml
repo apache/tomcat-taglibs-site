@@ -24,14 +24,12 @@
   <body>
     <section name="Jakarta Taglibs">
      <p> 
-      This project is an open source repository for JSP custom tag libraries.
-      For a general description, please see the official java.sun.com page on <a href="http://java.sun.com/products/jsp/taglibraries.html">
-      JSP(tm) Tag Libraries</a>.
+      This project is an open source repository for JSP(tm) Tag Libraries. 
      </p>
      <p>
-      Jakarta Taglibs also hosts the development tree of the
-      reference implementation (RI) for the <a href="http://java.sun.com/products/jsp/jstl">JSTL specification</a> - the 
-      <a href="doc/standard-doc/intro.html">Jakarta Standard Taglib</a>. Versions 1.0 and 1.1 of JSTL (JSP Standard Tag Library) are implemented here, and a 1.2 implementation is in the works. 
+      In particular, Jakarta Taglibs hosts an implementation of the
+      <a href="http://java.sun.com/products/jsp/jstl">JSP Standard Tag Library specification</a> - the 
+      <a href="doc/standard-doc/intro.html">Jakarta Standard Taglib</a>. Versions 1.0 and 1.1 of JSTL are implemented, and a 2.0 implementation is in the works. 
      </p>
     </section>
 
