@@ -26,7 +26,7 @@
     <version>1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>taglibs-site</artifactId>
+  <artifactId>site</artifactId>
   <version>1-SNAPSHOT</version>
   <name>Jakarta Taglibs</name>
   <packaging>pom</packaging>  <!-- site? -->
@@ -36,9 +36,9 @@
   <inceptionYear>2009</inceptionYear>
 
   <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/jakarta/taglibs/proper/taglibs-site/trunk</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/jakarta/taglibs/proper/taglibs-site/trunk</developerConnection>
-    <url>http://svn.apache.org/viewvc/jakarta/taglibs/proper/taglibs-site/trunk</url>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/jakarta/taglibs/proper/site/trunk</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/jakarta/taglibs/proper/site/trunk</developerConnection>
+    <url>http://svn.apache.org/viewvc/jakarta/taglibs/proper/site/trunk</url>
   </scm>
 
 </project>
