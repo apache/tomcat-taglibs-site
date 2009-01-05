@@ -21,28 +21,17 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.apache</groupId>
-    <artifactId>apache</artifactId>
-    <version>4</version>
+    <groupId>org.apache.taglibs</groupId>
+    <artifactId>taglibs-parent</artifactId>
+    <version>1-SNAPSHOT</version>
   </parent>
 
-  <groupId>org.apache.taglibs</groupId>
   <artifactId>taglibs-site</artifactId>
   <version>1-SNAPSHOT</version>
   <name>Jakarta Taglibs Site</name>
   <packaging>pom</packaging>  <!-- site? -->
 
   <inceptionYear>2009</inceptionYear>
-
-  <ciManagement>
-    <system>continuum</system>
-    <url>http://vmbuild.apache.org/continuum/projectGroupSummary.action?projectGroupId=145</url>
-  </ciManagement>
-
-  <issueManagement>
-    <system>bugzilla</system>
-    <url>http://issues.apache.org/bugzilla/</url>
-  </issueManagement>
 
   <scm>
     <connection>scm:svn:http://svn.apache.org/repos/asf/jakarta/taglibs/proper/taglibs-site/trunk</connection>
