@@ -1,0 +1,1028 @@
+<?xml version="1.0"?>
+<document url="./tutorial.xml">
+
+  <properties>
+    <author>Justyna Horwat</author>
+    <title>JAKARTA-TAGLIBS Tutorial</title>
+  </properties>
+
+  <body>
+
+<section name="Overview" href="Overview">
+<p>This tutorial will give you an overview of how some of the basic tags in the 
+  Jakarta-Taglibs library were created. Tag libraries allow you to create custom 
+  actions and encapsulate functionality. Custom tags can clearly separate the 
+  presentation layer from the business logic. They are easy to maintain reusable 
+  components that have access to all the objects available to JSP pages. Please 
+  consult the <a href="http://www.jcp.org/aboutJava/communityprocess/final/jsr053">JavaServer 
+  Pages Specification, version 1.2</a> for more details. </p>
+<p>Servers that implement JSP, v1.1+ support tag libraries. You can find a description 
+  of various servers and what they currently support at the 
+  <a href="http://java.sun.com/products/jsp/industry.html"> 
+  JavaServer Pages Industry Momentum</a> page. There is also has a very good 
+  <a href="http://java.sun.com/webservices/docs/ea1/tutorial/index.html"> Java Web Services Tutorial</a> available on Sun's website that includes sections on <a href="http://java.sun.com/webservices/docs/ea1/tutorial/doc/JSPTags.html"> Custom Tags</a> and the <a href="http://java.sun.com/webservices/docs/ea1/tutorial/doc/JSTL.html">JSP Standard Tag Library (JSTL)</a>.</p>
+<ul>
+  <h3> 
+    <a href="#tag_handler">Tag Handler</a>
+  </h3>
+  server-side object that helps evaluate actions during the execution of a JSP 
+  page 
+  <h3> 
+    <a href="#tag_library">Tag Library Descriptor</a>
+  </h3>
+  xml file that defines tag names and tag attributes 
+  <h3> 
+    <a href="#tag_jsp">JSP</a>
+  </h3>
+  tag library is made available to the JSP page using the <code>taglib</code> 
+  directive 
+  <h3> 
+    <a href="#tag_install">Installation and Deployment</a>
+  </h3>
+  how to install a pre-existing tag library 
+  <h3>
+    <a href="#tag_examples">Examples</a>
+  </h3>
+  code illustrations 
+</ul>
+</section>
+
+<section name="Tag Handler" href="tag_handler">
+<p>The Tag Handler is responsible for the interaction between the JSP page and 
+  additional server-side objects. The handler is invoked during the execution 
+  of a JSP page when a custom tag is encountered. The <code>doStartTag()</code> 
+  and <code>doEndTag()</code> methods are invoked when the start and end custom 
+  tags, respectively, are encountered. The<code> release()</code> method releases 
+  resources allocated by the tag handler.</p>
+<p>There are two interfaces that describe a tag handler: </p>
+<table width="75%" border="1" align="center">
+  <tr> 
+    <td width="27%"><code>Tag</code></td>
+    <td width="73%">used for simple tag handlers not interested in manipulating 
+      their body content</td>
+  </tr>
+  <tr> 
+    <td width="27%"><code>BodyTag</code></td>
+    <td width="73%">an extension of Tag and gives the handler access to its body</td>
+  </tr>
+</table>
+<p> The Tag Handler has two main action methods:</p>
+<table width="75%" border="1" align="center">
+  <tr> 
+    <td width="28%" height="32"><code>doStartTag()</code></td>
+    <td width="72%" height="32"> 
+      <p>process the start tag of this action.</p>
+    </td>
+  </tr>
+  <tr> 
+    <td width="28%" height="40"><code>doEndTag()</code></td>
+    <td width="72%" height="40">process the end tag of this action. Called after 
+      returning from doStartTag.</td>
+  </tr>
+  <tr>
+    <td width="28%" height="40"><code>release()</code></td>
+    <td width="72%" height="40">release resources</td>
+  </tr>
+</table>
+<blockquote> 
+  <p><code>doStartTag</code>() returns the following: </p>
+  <ul>
+    <li><code>EVAL_BODY_INCLUDE</code> 
+      <ul>
+        <li>process the body of the action but do not create a new BodyContent. Pass the body through without manipulating it. Only valid if you <b>DON'T</b> implement the <code>BodyTag</code> interface.</li>
+      </ul>
+    </li>
+    <li><code>EVAL_BODY_TAG</code> 
+      <ul>
+        <li>process the body of the action and create a new BodyContent. Only valid if you <b>DO</b> implement the <code>BodyTag</code> interface.</li>
+      </ul>
+    </li>
+    <li><code>SKIP_BODY</code> 
+      <ul>
+        <li>do not evaluate the body of the tag</li>
+      </ul>
+    </li>
+  </ul>
+  <p><code>doEndTag</code>() returns the following: </p>
+  <ul>
+    <li><code>EVAL_PAGE</code> 
+      <ul>
+        <li>the rest of the JSP page will be evaluated</li>
+      </ul>
+    </li>
+    <li><code>SKIP_PAGE</code> 
+      <ul>
+        <li>the rest of the JSP page will not be evaluated </li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+<p>The return values direct the JSP container on how to evaluate the rest of the 
+  JSP page. The <code>release()</code> method releases resources allocated by 
+  the tag handler.</p>
+<p><code>TagSupport</code> and <code>BodyTagSupport</code> are subclasses of <code>Tag</code> 
+  and can be used as base classes when creating new tag handlers. </p>
+<p>The <code>TagSupport</code> class is a utility class that implements the <code>Tag</code> 
+  interface and adds additional convenience methods including:</p>
+<ul>
+  <li> getter method for <code>Tag</code> properties</li>
+</ul>
+
+<p>If the tag handler manipulates the body of an action, it must implement the 
+  <code>BodyTag</code> interface. <code>doStartTag</code>() must return <code>EVAL_BODY_TAG</code> 
+  in order for the body of the tag to be evaluated. If <code>SKIP_BODY</code> 
+  is returned, the body will be ignored. Methods that interact with the body content 
+  include:</p>
+<table width="75%" border="1" align="center">
+  <tr> 
+    <td width="27%"><code>doInitBody</code>()</td>
+    <td width="73%">invoked before the body of the tag is evaluated but after 
+      body content is set</td>
+  </tr>
+  <tr> 
+    <td width="27%"><code>doAfterBody</code>()</td>
+    <td width="73%">invoked after body content is evaluated</td>
+  </tr>
+</table>
+<p> <code> </code>The <code>BodyTagSupport</code> class implements the <code>BodyTag</code> 
+  interface and adds additional convenience methods. Some of these methods include:</p>
+<ul>
+  <li>getter for the <code>bodyContent</code> property</li>
+  <li>getter for the previous <code>out</code> JSPWriter</li>
+</ul>
+<p>In a Web Application handlers must reside in one of the following standard 
+  locations for Java classes:</p>
+<ul>
+  <li>in a JAR file in the <code>/WEB-INF/lib</code> directory</li>
+  <li>in a directory in the <code>/WEB-INF/classes</code> directory</li>
+</ul>
+<p>A tag handler has access to some properties that are set by the JSP container 
+  using setter methods. This includes the <code>pageContext</code> and <code>parent</code> 
+  objects. The tag handler also has access to server-side objects and enclosing 
+  actions. If the tag is nested, the parent handler of the enclosing tag can be 
+  accessed by using either:</p>
+<ul>
+  <li><code> TagSupport.getParent()</code></li>
+  <li><code>TagSupport.findAncestorWithClass(from, class)</code></li>
+</ul>
+<p>The parent handler's statically and dynamically created objects can be obtained 
+  once the parent object is retrieved.</p>
+</section>
+
+<section name="Tag Library Descriptor" href="tag_library">
+
+<p>The Tag Library Descriptor (TLD) is used by the JSP container to interpret pages that include the taglib directives referring to that tag library. It is an XML document that maps action tags to tag handler classes. You can locate a TLD in two ways:</p>
+<ul>
+  <li><code>web.xml</code> <code>taglib</code> element
+    <ul>
+      <li><code>taglib-uri</code>
+        <ul>
+          <li>uri identifying a Tag Library</li>
+        </ul>
+      </li>  
+      <li><code>taglib-location</code>
+        <ul>
+          <li>location, as a resource, where the TLD file can be found</li>
+        </ul>
+      </li>  
+    </ul> 
+  </li> 
+  <li>default mapping</li>
+</ul>                    
+<p>You can find more information about the web.xml <code>taglib</code> element in the Servlet 2.2 and JSP 1.1 specifications.</p>
+<p>You will need to explicitly reference the external DOCTYPE because of a recent change to call the validating parser:</p>
+<pre>                                        
+  &lt;!DOCTYPE taglib
+    PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+    "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd"&gt;
+</pre>                                       
+<p>The TLD <code>taglib</code> element is the document root. It has the following subelements:
+</p>
+<table width="75%" border="1" align="center">
+  <tr>
+    <td width="23%" height="22"><code>tlibversion</code></td>
+    <td width="77%" height="22">version of the tag library implementation</td>
+  </tr>
+  <tr>
+    <td width="23%"><code>jspversion</code></td>
+    <td width="77%">version of the JSP specification the tag library requires</td>
+  </tr>
+  <tr>
+    <td width="23%"><code>shortname</code></td>
+    <td width="77%">name that could be used to reference the tag library from
+      a JSP page</td>
+  </tr>
+  <tr>
+    <td width="23%"><code>uri</code></td>
+    <td width="77%">uri uniquely identifying the tag library - info string describing the "use" of the tag library </td>
+  </tr>
+  <tr>
+    <td width="23%"><code>info</code></td>
+    <td width="77%">string describing the "use" of the tag library </td>
+  </tr>
+</table>
+<p>The tag element defines an action in the tag library. It may have several subelements that define the action: </p>
+<table width="75%" border="1" align="center">
+  <tr>
+    <td><code>name</code></td>
+    <td>unique action name</td>
+  </tr>
+  <tr>
+    <td><code>tagclass</code></td>
+    <td>tag handler class implementing <code>javax.servlet.jsp.tagext.Tag</code></td>
+  </tr>
+  <tr>
+    <td><code>teiclass</code></td>
+    <td>optional subclass of <code>javax.servlet.jsp.tagext.TagExtraInfo</code></td>
+  </tr>
+  <tr>
+    <td height="18"><code>bodycontent</code></td>
+    <td height="18">
+      <p>one of three body content types</p>
+      </td>
+  </tr>
+  <tr>
+    <td><code>info</code></td>
+    <td>
+      <p>optional tag-specific information</p>
+      </td>
+  </tr>
+  <tr>
+    <td><code>attribute</code></td>
+    <td>
+      <p>all attributes of the action</p>
+      </td>
+  </tr>
+</table>
+<blockquote>
+  <p><code>bodycontent</code> is included if the tag has a body. It is used by
+    page composition tools so it does not affect the composition of the body.
+    It can be one of the three following types:</p>
+  <ul>
+    <li><code>JSP</code> (default)
+      <ul>
+        <li> the JSP container should evaluate any body of the tag, but it can
+          also be empty</li>
+      </ul>
+    </li>
+    <li><code>tagdependent</code>
+      <ul>
+        <li>any body of the tag would be handled by the tag itself, but it can
+          also be empty</li>
+      </ul>
+    </li>
+    <li><code>empty</code>
+      <ul>
+        <li>body must be empty</li>
+      </ul>
+    </li>
+  </ul>
+  <p>the <code>teiclass</code> defines the scripting variable and includes the
+    following information:</p>
+  <ul>
+    <li>name</li>
+    <li>type</li>
+    <li>whether variable needs to be created or not</li>
+    <li>scope</li>
+  </ul>
+  <p><code>attributes</code> can have the following fields:</p>
+  <ul>
+    <li><code>name</code> (required)
+      <ul>
+        <li>attribute name</li>
+      </ul>
+    </li>
+    <li><code>required</code>
+      <ul>
+        <li>if attribute is required or optional</li>
+      </ul>
+    </li>
+    <li><code>rtexprvalue</code>
+      <ul>
+        <li>if attribute value may be dynamically calculated at runtime by a scriptlet.
+          NOTE: default value is &quot;false&quot;, meaning that the attribute
+          has a static value. Make sure you set it to &quot;true&quot; if the
+          attribute value is determined at request time.</li>
+      </ul>
+    </li>
+  </ul>
+  <p>For every attribute you must have a JavaBeans style get and set methods in
+    the Tag Handler. If your attribute is named <code>id</code>, the <code>TagSupport</code>
+    class defines the <code>setId</code>() and <code>getId</code>() methods for
+    you.</p>
+</blockquote>
+</section>
+
+<section name="JavaServer Pages" href="tag_jsp">
+<p>JavaServer Pages can handle XML content encapsulated in Tag Library actions.</p>
+<code>
+<pre>
+  &lt;%@ taglib uri="identifier" prefix="prefix" %&gt;
+</pre>
+</code>
+<p>To use a Tag Library, you need to tell the JSP container where it is located
+  using a <code>taglib</code> directive. The directive must come <b>before</b> any actions.</p>
+<ul>
+  <li>The "identifier" will need to match the one used in <code>&lt;taglib-uri&gt;</code>
+ in the web.xml file.</li>
+  <li>The "prefix" distinguishes which tag library will be used.</li>
+</ul>
+</section>
+
+<section name="Installation and Deployment" href="tag_install">
+
+<h3>a) Creating a Generic Tag Library </h3>
+<p>To Install a tag library you need to take the following steps:</p>
+<ol>
+  <li>bundle the tag classes in a jar file. Make sure to include the taglib <code>{library}.tld</code> file located in the <code>/WEB-INF</code> directory</li>
+  <li>add the tag <code>{library}.jar</code> file to the <code>CLASSPATH</code></li>
+  <li>copy the <code>{library}.jar</code> file to the <code>/WEB-INF/lib</code> directory</li>
+  <li>define the taglib element in the <code>/WEB-INF/web.xml</code> file. For example:
+    <pre>
+  &lt;taglib&gt;
+    &lt;taglib-uri&gt;http://jakarta.apache.org/taglibs/{library}&lt;/taglib-uri&gt;
+    &lt;taglib-location&gt;/WEB-INF/{library}.tld&lt;/taglib-location&gt;
+  &lt;/taglib&gt;
+    </pre>
+  </li>
+  <li>define the tag extension in the jsp page. The <code>&lt;taglib-uri&gt;</code> and the <code>uri</code> directive must match. The <code>prefix</code> identifies the tags in the tag library within the jsp page. For example:</li>
+    <pre>
+  &lt;%@ taglib uri="http://jakarta.apache.org/taglibs/{library}" prefix="x" %&gt;
+    </pre>
+  
+</ol>
+
+<h3>b) Adding a Jakarta-Taglibs Library </h3>
+<p>To add a tag library subproject to Jakarta-Taglibs you need to do the following:</p>
+<ol>
+  <li>create a top level directory for the project.</li>
+  <li>copy the following top-level files from one of the existing subprojects:
+    <ul>
+      <li><code>build.sh</code></li>
+      <li><code>build.bat</code></li>
+      <li><code>build.xml</code></li>
+    </ul>
+  </li>
+  <li>change the <code>taglib.name</code> property to the new custom tag library subproject name</li>
+  <li>duplicate the directory structure from one of the existing subprojects</li>
+  <li>modify the top-level Jakarta-Taglibs <code>build.xml</code> file to include the new library</li>
+</ol>
+
+<h3>c) Deploying a Tag Library</h3>
+<p>Use the build scripts in the <code>jakarta-taglibs</code> project to create the war files.
+Once you have a war file built you can simply place that file in the <code>$TOMCAT_HOME/webapps</code> 
+directory. Tomcat will load your classes and create the new context.</p>
+<p>The war file should have the following structure:</p>
+<code>
+<pre>
+  META-INF/
+  META-INF/MANIFEST.MF
+  WEB-INF/
+  WEB-INF/classes/
+  WEB-INF/lib/
+  WEB-INF/lib/{tagLibrary}.jar
+  WEB-INF/web.xml
+  WEB-INF/{tagLibrary}.tld
+</pre>
+</code>
+<p>If you do not want to use a jar file, you can place all the class files in the
+<code>/WEB-INF/classes</code> directory.</p> 
+<p>Consult the <a href="http://java.sun.com/products/servlet/download.html">Java 
+  Servlet Specification, v2.2</a> for more information on war files.</p>
+</section>
+
+<section name="Examples" href="tag_examples">
+<p>Some examples include:</p>
+
+<ul>
+  <li><a href="#tag_basic">Basic Tag</a></li>
+  <li><a href="#tag_nested">Simple Nested Tag</a></li>
+  <li><a href="#tag_UtilityTags">UtilityTags Library Documentation</a></li>
+</ul>
+</section>
+
+<section name="Basic Tag" href="tag_basic">
+<p>This basic tag is the "Hello World" example. The text "Hello World" will print whenever the
+tag is encountered.</p>
+<ul>
+  <li><a href="#basic_tag_handler">Tag Handler</a></li>
+  <li><a href="#basic_tag_library">Tag Library Descriptor</a></li>
+  <li><a href="#basic_tag_webxml">web.xml file</a></li>
+  <li><a href="#basic_tag_jsp">JSP</a></li>
+</ul>
+
+<h3><a name="basic_tag_handler">Hello World Tag Handler</a></h3>
+<p>You can find the Tag Handler for the Hello World tag in the <code>/WEB-INF/classes/basic</code> 
+  directory since it is a part of the basic package</p>
+<code>
+<pre>
+  package basic;
+</pre>
+</code>
+<p>Import the jsp and tag classes:</p>
+<code>
+<pre>
+  import javax.servlet.jsp.*;
+  import javax.servlet.jsp.tagext.*;
+</pre>
+</code>
+<p>The Hello World Tag Handler implements the <code>doStartTag</code>() method which is invoked when the start tag is encountered.</p>
+<code> 
+<pre>
+    public int doStartTag() throws JspException {
+        try {
+            pageContext.getOut().print("Hello World");
+        } catch (Exception ex) {
+            throw new JspException("IO problems");
+        }
+        return SKIP_BODY;
+    }
+</pre>
+</code> 
+<p>The <code>pageContext</code> is set by the JSP container and is available to 
+  the Tag Handler. The <code>SKIP_BODY</code> value makes sure that no evaluation 
+  of the tag body takes place.</p>
+<h3><a name="basic_tag_library">Hello World Tag Library Descriptor</a></h3>
+<code>
+<pre>
+  &lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+</pre>
+</code>
+<p>XML header describing the deployment descriptor DOCTYPE. The deployment descriptor 
+  includes the elements and configuration information of a web application.</p>
+<code>
+<pre>  &lt;!DOCTYPE taglib
+            PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" 
+            "http://java.sun.com/j2ee/dtds/web-jsptaglib_1_1.dtd"&gt;
+</pre>
+</code>
+<p>Initial taglibrary description</p>
+<code> 
+<pre>
+  &lt;taglib&gt;
+    &lt;!-- The version number of this tag library --&gt;
+    &lt;tlibversion&gt;1.0&lt;/tlibversion&gt;
+
+    &lt;!-- The JSP specification version required to function --&gt;
+    &lt;jspversion&gt;1.1&lt;/jspversion&gt;
+
+    &lt;!-- The short name of this tag library --&gt;
+    &lt;shortname&gt;utility&lt;/shortname&gt;
+
+    &lt;!-- Public URI that uniquely identifies this version of the tag library --&gt;
+    &lt;uri&gt;http://jakarta.apache.org/taglibs/utilitytags&lt;/uri&gt;
+
+    &lt;!-- General information about this tag library --&gt;
+    &lt;info&gt;
+          A simple tag library for the examples
+    &lt;/info&gt;
+</pre>
+</code> 
+<p>Hello World tag description.</p>
+<ul>
+  <li>tagclass element associates the Hello World tag handler with the Hello World tag</li>
+  <li><code>bodycontent</code> tag tells us that the tag will not contain any body</li>
+</ul>
+<code>
+<pre>
+  &lt;!-- Hello tag --&gt;
+    &lt;tag&gt;
+      &lt;name&gt;Hello&lt;/name&gt;
+      &lt;tagclass&gt;basic.Hello&lt;/tagclass&gt;
+      &lt;bodycontent&gt;empty&lt;/bodycontent&gt;
+      &lt;info&gt;
+        Print Hello World
+      &lt;/info&gt;
+    &lt;/tag&gt;</pre>
+</code>
+<h3><a name="basic_tag_webxml"></a>web.xml file</h3>
+<a> 
+<p>The <code>web.xml</code> file describes the mapping between the taglib <code>uri</code> 
+  and the location of the Tag Library Descriptor.</p>
+<p>Here the unique <code>taglib-uri</code> "<code>http://jakarta.apache.org/taglibs/utilitytags</code>" 
+  is associated with the Tag Library Descriptor in <code>/WEB-INF/tld/utilitytags.tld</code>.</p>
+<code> 
+<pre>
+  &lt;web-app&gt;
+    &lt;taglib&gt;
+       &lt;taglib-uri&gt;
+         http://jakarta.apache.org/taglibs/utilitytags
+       &lt;/taglib-uri&gt;
+       &lt;taglib-location&gt;
+         /WEB-INF/tld/utilitytags.tld
+       &lt;/taglib-location&gt;
+    &lt;/taglib&gt;
+  &lt;/web-app&gt;
+</pre>
+</code>
+<h3><a name="basic_tag_jsp">Hello World jsp</a></h3>
+<p>The following directive tells the JSP container to use the "<code>http://jakarta.apache.org/taglibs/utilitytags</code>" 
+  <code>uri</code> defined in <code>web.xml</code>. "<code>jLib</code>" is defined 
+  as the prefix value for the tag.
+</p>
+<code> 
+<pre>
+  &lt;%@ taglib uri="http://jakarta.apache.org/taglibs/utilitytags" prefix="jLib" %&gt;
+</pre>
+</code> 
+<p>The Hello World tag is called. The tag name "Hello" is defined in the the Tag 
+  Library Descriptor.</p>
+<code> 
+<pre>
+  &lt;jLib:Hello/&gt;
+</pre>
+</code></a> 
+</section>
+
+<section name="Simple Nested Action" href="tag_nested">
+<p>This nested tag is an example of an "If" conditional tag. Based on the value of the attribute
+the included scriptlet will be evaluated or skipped.</p>
+<ul>
+  <li><a href="#nested_tag_handler">Tag Handler</a></li>
+  <li><a href="#nested_tag_library">Tag Library Descriptor</a></li>
+  <li><a href="#nested_tag_webxml">web.xml file</a></li>
+  <li><a href="#nested_tag_jsp">JSP</a></li>
+</ul>
+
+<h3><a name="nested_tag_handler">If Tag Handler</a></h3>
+<p>The <code>BodyTagSupport</code> class implements the <code>BodyTag</code> interface and has getter methods for the <code>bodyContent</code> property.
+</p>
+<code> 
+<pre>
+  public class IfTag extends BodyTagSupport {
+</pre>
+</code> 
+<p>The <code>doStartTag()</code> method which is invoked when the start tag is encountered and calls the local <code>getPredicate()</code> method. If the return value is true, the rest of the the tag body is evaluated, otherwise it is skipped.
+</p>
+<code>
+<pre>
+  public int doStartTag() {
+    if (getPredicate()) return EVAL_BODY_TAG;
+    else return SKIP_BODY;
+  }
+</pre> 
+</code>
+<p><code>doAfterBody()</code> is called after some body has been evaluated. It is not invoked 
+  in empty tags or in tags returning <code>SKIP_BODY</code> in <code>doStartTag()</code>.</p>
+<code> 
+<pre>
+  public int doAfterBody() throws JspException {
+    try {
+      bodyContent.writeOut(bodyContent.getEnclosingWriter());
+      return SKIP_BODY;
+    } catch (IOException ex) {
+      throw new JspTagException(ex.toString());
+    }
+  }
+</pre>
+</code>
+<h3><a name="nested_tag_library">If Tag Library Descriptor</a></h3>
+<code>
+<pre>
+  &lt;!-- IF tag --&gt;
+    &lt;tag&gt;
+      &lt;name&gt;If&lt;/name&gt;
+      &lt;tagclass&gt;lang.IfTag&lt;/tagclass&gt;
+</pre>
+</code>
+<p>The If tag has one required attribute. Since the <code>rtexprvalue</code> is set to true, the attribute can have scriptlet expressions as a value. The value can be dynamically calculated at request time.</p>
+<code>
+<pre>
+      &lt;attribute&gt;
+        &lt;name&gt;predicate&lt;/name&gt;
+        &lt;required&gt;true&lt;/required&gt;
+        &lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt;
+      &lt;/attribute&gt;
+      &lt;info&gt;
+        Conditional Tag.
+      &lt;/info&gt;
+    &lt;/tag&gt;  
+</pre>
+</code>
+<h3><a name="nested_tag_webxml"></a>web.xml file</h3>
+<a> 
+<p>The <code>web.xml</code> file describes the mapping between the taglib <code>uri</code> 
+  and the location of the Tag Library Descriptor.</p>
+<p>Here the unique <code>taglib-uri</code> "<code>http://jakarta.apache.org/taglibs/utilitytags</code>" 
+  is associated with the Tag Library Descriptor in <code>/WEB-INF/tld/utilitytags.tld</code>.</p>
+<h3><a name="nested_tag_jsp">If JSP</a></h3>
+<p>The If tag requires one attribute. The predicate attribute includes a scriptlet 
+  which will be evaluated at runtime. Based on the predicate attribute value, 
+  the <code>jLib:Hello</code> tag will be evaluated or skipped.</p>
+<code> 
+<pre>
+  &lt;jlib:if predicate="&lt;%= x==5 %&gt;"&gt;
+    &lt;jLib:Hello/&gt;   
+  &lt;/jlib:if&gt;
+</pre>
+</code></a> 
+</section>
+
+<section name="Documentation for the UtilityTags Tag Library" href="tag_UtilityTags">
+
+<h3>1. INTRODUCTION</h3>
+
+<p>The <code>utilitytags</code> custom tag library contains examples of some basic 
+  tags. It illustrates several straightforward custom tag library code techniques.</p>
+<h3>2. PREREQUISITE SOFTWARE</h3>
+
+<p>This custom tag library requires no software other than a servlet container
+that supports the <a href="ftp://ftp.java.sun.com/pub/jsp/11final-87721/jsp1_1-spec.pdf">
+JavaServer Pages Specification, version 1.1</a>.</p>
+
+
+<h3>3. CONFIGURATION INFORMATION</h3>
+
+<p>Follow these steps to configure your web application with this tag library:</p>
+<ul>
+  <li>Copy the tag library descriptor file (<code>utilitytags/utilitytags.tld</code>) 
+    to the <code>/WEB-INF</code> subdirectory of your web application.</li>
+  <li>Copy the tag library JAR file (<code>utilitytags/utilitytags.jar</code>) 
+    to the <code>/WEB-INF/lib</code> subdirectory of your web application.</li>
+  <li>Add a <code>&lt;taglib&gt;</code> element to your web application deployment 
+    descriptor in <code>/WEB-INF/web.xml</code> like this: 
+    <pre>
+    &lt;taglib&gt;
+        &lt;taglib-uri&gt;http://jakarta.apache.org/taglibs/utilitytags&lt;/taglib-uri&gt;
+        &lt;taglib-location&gt;/WEB-INF/utilitytags.tld&lt;/taglib-location&gt;
+    &lt;/taglib&gt;
+    </pre>
+  </li>
+</ul>
+
+<p>To use the tags from this library in your JSP pages, add the following
+directive at the top of each page:</p>
+<pre>
+    &lt;%@ taglib uri="http://jakarta.apache.org/taglibs/utilitytags" prefix="x" %&gt;
+</pre>
+where "x" is the tag name prefix you wish to use for tags from this library. You 
+can change this value to any prefix you like.
+
+<h3>4. TAG DOCUMENTATION</h3>
+<p>The <code>utilitytags</code> Tag Library contains the following tags:</p>
+
+<ol type="a">
+  <li> 
+    <h3>Hello Tag</h3>
+    <p>The <code>Hello</code> tag prints out the text "Hello World". It does not 
+      have any attributes.</p>
+    <table width="75%" border="1">
+      <tr> 
+        <th> 
+          <div align="center">Attribute</div>
+        </th>
+        <th> 
+          <div align="center">Description</div>
+        </th>
+        <th> 
+          <div align="center">Required</div>
+        </th>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">-</div>
+        </td>
+        <td> 
+          <div align="center">-</div>
+        </td>
+        <td> 
+          <div align="center">-</div>
+        </td>
+      </tr>
+    </table>
+  </li>
+  <li> 
+    <h3>Copy Tag</h3>
+    <p>The <code>MacroCopy</code> tag copies the attribute text to a Writer.</p>
+    <table width="75%" border="1">
+      <tr> 
+        <th> 
+          <div align="center">Attribute</div>
+        </th>
+        <th> 
+          <div align="center">Description</div>
+        </th>
+        <th> 
+          <div align="center">Required</div>
+        </th>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">name</div>
+        </td>
+        <td> 
+          <div align="center">Name associated with the text to be copied. Any 
+            string value.</div>
+        </td>
+        <td> 
+          <div align="center">yes</div>
+        </td>
+      </tr>
+    </table>
+  </li>
+  <li> 
+    <h3>Paste Tag</h3>
+    <p>The <code>MacroPaste</code> tag pastes the text specified by a Writer.</p>
+    <table width="75%" border="1">
+      <tr> 
+        <th> 
+          <div align="center">Attribute</div>
+        </th>
+        <th> 
+          <div align="center">Description</div>
+        </th>
+        <th> 
+          <div align="center">Required</div>
+        </th>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">name</div>
+        </td>
+        <td> 
+          <div align="center">Name associated with the text to be pasted. Any 
+            string value.</div>
+        </td>
+        <td> 
+          <div align="center">yes</div>
+        </td>
+      </tr>
+    </table>
+  </li>
+  <li> 
+    <h3>ShowSource Tag</h3>
+    <p>The <code>ShowSource</code> tag takes a jspFile and copies the contents 
+      to a Writer.</p>
+    <table width="75%" border="1">
+      <tr> 
+        <th> 
+          <div align="center">Attribute</div>
+        </th>
+        <th> 
+          <div align="center">Description</div>
+        </th>
+        <th> 
+          <div align="center">Required</div>
+        </th>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">jspFile</div>
+        </td>
+        <td> 
+          <div align="center">The filename and relative path of the jsp file. 
+            Any string value.</div>
+        </td>
+        <td> 
+          <div align="center">yes</div>
+        </td>
+      </tr>
+    </table>
+  </li>
+  <li> 
+    <h3>Include Tag</h3>
+    <p>The <code>Include</code> tag includes in-line the output of the specified 
+      url.</p>
+    <table width="75%" border="1">
+      <tr> 
+        <th> 
+          <div align="center">Attribute</div>
+        </th>
+        <th> 
+          <div align="center">Description</div>
+        </th>
+        <th> 
+          <div align="center">Required</div>
+        </th>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">url</div>
+        </td>
+        <td> 
+          <div align="center">Any valid url.</div>
+        </td>
+        <td> 
+          <div align="center">yes</div>
+        </td>
+      </tr>
+    </table>
+  </li>
+  <li> 
+    <h3>If Tag</h3>
+    <p>The <code>If</code> tag is a basic conditional tag.</p>
+    <table width="75%" border="1">
+      <tr> 
+        <th> 
+          <div align="center">Attribute</div>
+        </th>
+        <th> 
+          <div align="center">Description</div>
+        </th>
+        <th> 
+          <div align="center">Required</div>
+        </th>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">predicate</div>
+        </td>
+        <td> 
+          <div align="center">Any string value.</div>
+        </td>
+        <td> 
+          <div align="center">yes</div>
+        </td>
+      </tr>
+    </table>
+  </li>
+  <li> 
+    <h3>For Tag</h3>
+    <p>The <code>For</code> tag is a basic looping tag.</p>
+    <table width="75%" border="1">
+      <tr> 
+        <th> 
+          <div align="center">Attribute</div>
+        </th>
+        <th> 
+          <div align="center">Description</div>
+        </th>
+        <th> 
+          <div align="center">Required</div>
+        </th>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">iterations</div>
+        </td>
+        <td> 
+          <div align="center">Number of loop iterations to be completed. Any string 
+            integer value.</div>
+        </td>
+        <td> 
+          <div align="center">yes</div>
+        </td>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">varName</div>
+        </td>
+        <td> 
+          <div align="center">Variable name associated with the For loop. Any 
+            string value.</div>
+        </td>
+        <td> 
+          <div align="center">no</div>
+        </td>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">begin</div>
+        </td>
+        <td> 
+          <div align="center">Loop starting value. Any string integer value.</div>
+        </td>
+        <td> 
+          <div align="center">no</div>
+        </td>
+      </tr>
+    </table>
+  </li>
+  <li> 
+    <h3>useBean Tag</h3>
+    <p>The <code>useBean</code> tag associates an instance of a Java object with the given id.</p>
+    <table width="75%" border="1">
+      <tr> 
+        <th> 
+          <div align="center">Attribute</div>
+        </th>
+        <th> 
+          <div align="center">Description</div>
+        </th>
+        <th> 
+          <div align="center">Required</div>
+        </th>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">id</div>
+        </td>
+        <td> 
+          <div align="center">Uniquely identifies the bean to the JSP container and page. Any string value.</div>
+        </td>
+        <td> 
+          <div align="center">yes</div>
+        </td>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">scope</div>
+        </td>
+        <td> 
+          <div align="center">page|request|session|application</div>
+        </td>
+        <td> 
+          <div align="center">no</div>
+        </td>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">classname</div>
+        </td>
+        <td> 
+          <div align="center">name of class that defines the implementation of the object.</div>
+        </td>
+        <td> 
+          <div align="center">no</div>
+        </td>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">type</div>
+        </td>
+        <td> 
+          <div align="center">type of the scripting variable defined</div>
+        </td>
+        <td> 
+          <div align="center">no</div>
+        </td>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">beanName</div>
+        </td>
+        <td> 
+          <div align="center">The name of the bean as expected by the instantiate() method of the java.beans.Beans class</div>
+        </td>
+        <td> 
+          <div align="center">yes</div>
+        </td>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">processRequest</div>
+        </td>
+        <td> 
+          <div align="center">true|false. JSP 0.92 compatibility.</div>
+        </td>
+        <td> 
+          <div align="center">no</div>
+        </td>
+      </tr>
+    </table>
+  </li>
+  <li> 
+    <h3>Validate Tag</h3>
+    <p>The <code>Validate</code> tag generates Javascript to validate the HTML 
+      form.</p>
+    <table width="75%" border="1">
+      <tr> 
+        <th> 
+          <div align="center">Attribute</div>
+        </th>
+        <th> 
+          <div align="center">Description</div>
+        </th>
+        <th> 
+          <div align="center">Required</div>
+        </th>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">name</div>
+        </td>
+        <td> 
+          <div align="center">Name of the form. Any string value.</div>
+        </td>
+        <td> 
+          <div align="center">yes</div>
+        </td>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">method</div>
+        </td>
+        <td> 
+          <div align="center">Name of the Javascript function to be generated. Any string value.</div>
+        </td>
+        <td> 
+          <div align="center">yes</div>
+        </td>
+      </tr>
+      <tr> 
+        <td> 
+          <div align="center">reqdFields</div>
+        </td>
+        <td> 
+          <div align="center">Comma separated mandatory field list. Any string value.</div>
+        </td>
+        <td> 
+          <div align="center">yes</div>
+        </td>
+      </tr>
+    </table>
+  </li>
+</ol>
+</section>
+  </body>
+</document>
