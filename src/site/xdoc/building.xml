@@ -1,0 +1,377 @@
+<?xml version="1.0"?>
+<document url="./sourcedist.xml">
+
+  <properties>
+    <author>Craig R. McClanahan</author>
+    <title>Using the JAKARTA-TAGLIBS Source Distribution</title>
+  </properties>
+
+  <body>
+
+<section name="Prerequisites" href="Prerequisites">
+
+<p>To successfully build the JAKARTA-TAGLIBS custom tag libraries and
+Custom Tag Library Extensions (CTLX), you must download and install the
+following software components (where $JAKARTA_HOME refers to a directory
+into which you download and install the various Jakarta software components):
+<ul>
+
+<li>Download and install a version 1.1 or later
+    <a href="http://java.sun.com/products/">Java Development Kit</a>
+    implementation for your operating system platform (some libraries
+    may require Java2).  Set a <code>JAVA_HOME</code> environment
+    variable to point at the directory where your JDK is installed,
+    and add the <code>$JAVA_HOME/bin</code> directory to your PATH.</li>
+
+<li>Download and install the latest release of the
+    <a href="http://jakarta.apache.org/ant/">Jakarta Ant Project</a>
+    distribution into a directory named <code>$JAKARTA_HOME/jakarta-ant</code>.
+    If you have downloaded the source distribution, you will need to
+    build the executable version as follows:
+<pre>
+        cd $JAKARTA_HOME/jakarta-ant
+	./bootstrap.sh                      &lt;-- Unix
+	bootstrap                           &lt;-- Windows
+</pre>
+    This should cause the creation of an <code>ant.jar</code> file in
+    the <code>$JAKARTA_HOME/jakarta-ant/dist/lib</code> subdirectory.
+    Set the <code>ANT_HOME</code> environment variable to point at
+    your Ant distribution directory
+    <code>$JAKARTA_HOME/jakarta-ant/dist</code>
+    and add the <code>$ANT_HOME/bin</code> directory to your PATH.</li>
+
+<li>Download and install the
+    <a href="http://java.sun.com/products/xml/xml_jaxp.html">Java API for XML Parsing</a>
+    implementation, or another JAXP-compatible parser such as
+    <a href="http://xml.apache.org/xerces-j/">Apache XML Xerces</a>,
+    and install the required libraries in your CLASSPATH environment variable.</li>
+
+<li>Download and install the latest release of the
+    <a href="http://xml.apache.org/xalan/">Apache XML Xalan</a>
+    XSLT Transformation Processor, and install the required
+    libraries in your CLASSPATH environment variable.</li>
+
+<li>Download and install the Servlet 2.2 and JSP 1.1 API into a directory
+    named <code>$JAKARTA_HOME/jakarta-servletapi</code>.  The Servlet 2.2
+    and JSP 1.1 jar can be obtained from 
+    <a href="http://jakarta.apache.org/tomcat/">http://jakarta.apache.org/tomcat/</a>.
+    If you have downloaded the source distribution, you will need to build the
+    executable version as follows:
+<pre>
+        cd $JAKARTA_HOME/jakarta-servletapi
+	./build.sh dist                     &lt;-- Unix
+	build dist                          &lt;-- Windows
+</pre>
+    This should cause the creation of a <code>servlet.jar</code> file
+    in the <code>lib</code> subdirectory.</li>
+
+<li>To execute the custom tag libraries, you will need a servlet container
+    compatible with the Servlet API Specification, version 2.2 or later,
+    and supports the JavaServer Pages (JSP) Specification, version 1.1
+    or later.  Many such servlet containers are available -- the Jakarta
+    project hosts the <a href="http://jakarta.apache.org/tomcat/">Tomcat</a>
+    servlet container (which meets these requirements) at the
+    <a href="http://jakarta.apache.org/">Jakarta</a> web site.</li>
+
+</ul>
+</p>
+</section>
+
+<section name="Download and Installation" href="Download">
+
+<p>Source downloads of the JAKARTA-TAGLIBS distribution, as with all other
+Jakarta projects, are available from the Jakarta web site at
+<a href="http://jakarta.apache.org/site/sourceindex.html">http://jakarta.apache.org/site/sourceindex.html</a>.</p>
+
+<p>Download and unpack the JAKARTA-TAGLIBS distribution (from the link above)
+into a subdirectory named <code>jakarta-taglibs</code> under the
+<code>$JAKARTA_HOME</code> directory described above.  For example, you
+might end up with the following directory structure:
+
+<pre>
+$JAKARTA_HOME/
+    jakarta-ant/                &lt;-- Contains source distribution of Ant
+        dist/                   &lt;-- Contains binary distribution of Ant
+            lib/                &lt;-- Binary libraries directory
+	        ant.jar         &lt;-- Ant executable classes
+    jakarta-servletapi/		&lt;-- Contains binary distribution of Servletapi
+        lib/                    &lt;-- Binary libraries directory
+	    servlet.jar         &lt;-- Servlet API classes
+    jakarta-taglibs/            &lt;-- Contains source distribution of the
+                                    JAKARTA-TAGLIBS libraries
+        ... see below for details ...
+    jakarta-tomcat/             &lt;-- Contains Tomcat (if you are using it)
+</pre>
+</p>
+</section>
+
+<section name="Directory Structures" href="Directories">
+
+<p>The distribution archive will contain the following file and directory
+structure:
+
+<ul>
+<li><b>.cvsignore</b> - A CVS configuration file configuring what files
+    and directories to ignore when using CVS.</li>
+<li><b>LICENSE</b> - A copy of the Apache Software Foundation
+    license under which all Jakarta project software is distributed.</li>
+<li><b>README</b> - A brief README file that contains pointers
+    to the documentation that is available.</li>
+<li><b>HOWTO-RELEASE</b> - Documentation about the JAKARTA-TAGLIBS release
+    process.</li>
+<li><b>build.properties.sample</b> - An example Ant properties file used
+    to set properties for the location of jar files for API's needed to
+    build jakarta-taglibs.</li>
+<li><b>build.xml</b> - An XML file for Ant that describes the build process
+    for building all of the included custom tag libraries.  See the Ant
+    documentation for more information about the contents of this file.</li>
+<li><b>common.xml</b> - An XML file for Ant that implements common build
+    processes used for building individual tag libraries.</li>
+<li><b>common.properties</b> - A properties file for Ant used by common.xml.</li>
+<li><b>doc/</b> - A directory containing static documentation about the
+    JAKARTA-TAGLIBS subproject, including this file.  The following
+    documents are included:
+    <ul>
+    <li><a href="binarydist.html">Using the JAKARTA-TAGLIBS Binary
+        Distribution</a></li>
+    <li><a href="sourcedist.html">Using the JAKARTA-TAGLIBS Source
+        Distribution</a> (this document)</li>
+    <li><a href="addtaglib.html">Adding a Custom Tag Library or Extension to
+        JAKARTA-TAGLIBS</a></li>
+    <li><a href="guidelines.html">Taglib Developer Guidelines</a></li>
+    </ul>
+</li>
+<li><b>src/</b> - A directory containing source files for dynamically building
+    jakarta-taglibs tag libraries and documentation.  The following files and
+    directories are included:
+    <ul>
+    <li><b>doc/</b> - A directory containing source files for dynamically
+        building the http://jakarta.apache.org/taglibs web site
+        <ul>
+        <li><b>index.xml</b> - Content used to build
+            http:/jakarta.apache.org/taglibs/index.html</li>
+        <li><b>addtaglib.xml</b> - Content used to build
+            http:/jakarta.apache.org/taglibs/addtaglib.html</li>
+        <li><b>binarydist.xml</b> - Content used to build
+            http:/jakarta.apache.org/taglibs/binarydist.html</li>
+        <li><b>guidelines.xml</b> - Content used to build
+            http:/jakarta.apache.org/taglibs/guidelines.html</li>
+        <li><b>sourcedist.xml</b> - Content used to build
+            http:/jakarta.apache.org/taglibs/sourcedist.html</li>
+        <li><b>tutorial.xml</b> - Content used to build
+            http:/jakarta.apache.org/taglibs/tutorial.html</li>
+        <li><b>project.xml</b> - Content used to build left navigation menu
+            for  http:/jakarta.apache.org/taglibs/ documentation</li>
+        <li><b>taglibs_docs.dtd</b> - DTD for use with index.xml and taglib intro.xml</li>
+        <li><b>images/jakarta-logo.gif</b> - The Jakarta logo</li>
+        <li><b>images/taglibs.gif</b> - The JAKARTA-TAGLIBS logo</li>
+        <li><b>stylesheets/taglibs.xsl</b> - Transform content xml into
+            http:/jakarta.apache.org/taglibs/ documentation</li>
+        </ul>
+    </li>
+    <li><b>taglib/</b> - A directory containing common source files used to
+        dynamically build individual tag library documentation and Tag Library
+        Descriptor (TLD) file.
+        <ul>
+        <li><b>changes-doc.xsl</b> - XSL stylesheet used to build taglib documentation changes.html</li>
+        <li><b>examples.xsl</b> - XSL stylesheet used to build example war file jsp source html</li>
+        <li><b>taglib-doc.xsl</b> - XSL stylesheet used to build taglib documentation</li>
+        <li><b>tld11.xsl</b> - XSL stylesheet used to build taglib TLD file</li>
+        </ul> 
+    </li>
+    <li><b>taglib-template/</b> - Directory containing a template of directories and files
+        for a taglib which can be used when creating a new taglib
+        <ul>
+        <li><b>build.xml</b> - Template for an example build file</li>
+        <li><b>doc</b> - Source directory used to generate {taglib-name}-doc.war</li>
+        <li><b>doc/conf/web.xml</b> - Template for {taglib-name}-doc web application web.xml</li>
+        <li><b>examples</b> - Source directory used to generate {taglib-name}-examples.war</li>
+        <li><b>examples/conf/web.xml</b> - Template for {taglib-name}-examples web application web.xml</li>
+        <li><b>xml/intro.xml</b> - Template for taglib XML data used for generating
+            taglib intro.html documentation which is published to the JAKARTA-TAGLIBS site</li>
+        <li><b>xml/taglib-template.xml</b> - Template for taglib XML data for taglib and tags</li>
+        </ul>
+    </li>
+    </ul>
+</li>
+<li>A directory for each custom tag library included in the JAKARTA-TAGLIBS
+    project, where the directory name matches the short name of that project.
+    A Custom Tag Library Extension (CTLX) will be located in the appropriate
+    <code>tools/{tool}/{version}</code> directory.
+    Each directory will contain the following files and subdirectories
+    <ul>
+    <li><b>build.xml</b> - An XML file that describes the build process for
+        this particular custom tag library.  See the Ant documentation for
+        more information on the contents of this file.</li>
+    <li><b>doc/</b> - The source code (Java classes, resource files, HTML
+        pages, JSP pages, and so on) for a web application that will contain
+        the developer documentation for this tag library.  This web application
+        will be combined into a <code>{taglib}-doc.war</code> web
+        application archive in the binary distribution.  See below for more
+        information about the internal directory structure of web applications.</li>
+    <li><b>examples/</b> - The source code (Java classes, resource files,
+        HTML pages, JSP pages, and so on) for a web application that
+        demonstrates the use of custom tags within this custom tag library.
+        This web application will be combined into a
+        <code>{taglib}-examples.war</code> web application archive in the
+        binary distribution.  See below for more information about the
+        internal directory structure of web applications.</li>
+    <li><b>src/</b> - The Java source code and resource files of the classes
+        that comprise this custom tag library.  The internal directory
+        arrangement within the source directory must reflect the assignment
+        of classes to Java packages, in the usual manner.  To avoid name
+        clashes, the package name for each custom tag library should be
+        <code>org.apache.taglibs.{taglib}</code> so that multiple
+        JAKARTA-TAGLIBS can be used in the same application if desired.</li>
+    <li><b>xml/</b> - A directory containing XML data files used for
+        building taglib documentation and Tag Library Descriptor (TLD) file.
+        <ul>
+        <li><b>intro.xml</b> - XML data used for generating taglib intro.html
+            documentation which is published to the JAKARTA-TAGLIBS site.</li>
+        <li><b>{taglib-name}.xml</b> - XML data for taglib and tags used for 
+            generating taglib documentation and TLD file.</li>
+        </ul>
+    </li>
+    </ul>
+</li>
+</ul>
+</p>
+
+<p>Within the <b>doc/</b> and <b>examples/</b> subdirectories for each custom
+tag library, the following directory organization is used to contain the source
+components of this application:
+<ul>
+<li><b>conf/</b> -- The <code>web.xml</code> file for this application, plus
+    any other files that should be copied to the WEB-INF subdirectory.</li>
+<li><b>src/</b> -- The Java source code and resource files for this
+    application.  Package names are arbitrary, but we recommend using
+    <code>org.apache.taglibs.{taglib}.doc</code> for the documentation
+    application, and <code>org.apache.taglibs.{taglib}.examples</code>
+    for the example application.</li>
+<li><b>web/</b> -- The HTML and JSP pages that comprise this application's
+    user interface.  The <code>index.html</code> or <code>index.jsp</code>
+    page in this directory will be the "home" page of the application when
+    it is deployed in a servlet container.</li>
+</ul>
+</p>
+</section>
+
+<section name="Building JAKARTA-TAGLIBS" href="Building">
+
+<p>To build the distribution version of all included custom tag libraries,
+set your current directory to the <code>jakarta-taglibs</code> directory into
+which you unpacked the distribution.
+<ul>
+<li>Copy the file <code>build.properties.sample</code> to
+    <code>build.properties</code>.</li>
+<li>Edit <code>build.properties</code> and set the jar file properties
+    to the absolute path and filename for the jar files required to build
+    all the JAKARTA-TAGLIBS.</li>
+<li>Build all the JAKARTA-TAGLIBS by executing <code>ant</code> in a shell.</li>
+</ul>
+</p>
+
+<p>In addition to the directories described earlier, two additional directory
+hierarchies will be created to contain the results of the build:
+
+<pre>
+jakarta-taglibs/
+    build/           &lt;-- Contains intermediate form results of
+                         building JAKARTA-TAGLIBS custom libraries
+    dist/            &lt;-- Contains the files that will be included
+                         in the binary distribution of the
+                         JAKARTA-TAGLIBS project, as described in
+	                 binary distribution documentation
+</pre>
+</p>
+
+<p>When you are working on a particular custom tag library, it is faster to
+rebuild only that particular library while doing development.  To do this,
+change to the top level directory of that custom tag library (for example,
+change to the <code>jakarta-taglibs/jspspec</code> directory to work on the
+JSP Specification Examples custom tag library.  You can now use one of several
+variants of the Ant build, depending on what you want to do.  In
+each of the following cases use <code>ant</code> in a shell to execute
+a build of the taglib for a specific ant build target:
+
+<ul>
+<b>NOTE:</b>
+Some individual tag libraries may still need to be built using the
+<code>build.sh</code> shell script for unix or the <code>build.bat</code>
+DOS script.
+</ul>
+
+<ul>
+<li>Default -- Update the intermediate form (in the
+    <code>build/</code> directory) of the library itself, the
+    documentation application, and the example application.  This copies any
+    static files that have been changed, and recompiles any Java source classes
+    that have been changed.  Because this is the most commonly executed
+    command, it is the default.</li>
+<li><b>library</b> -- Update the intermediate form of the library
+    classes only.  This is useful when you are making sure it still compiles.</li>
+<li><b>documentation</b> -- Update the intermediate form of the
+    documentation application.  If your servlet container can accept an
+    unpacked web application (as Tomcat can), the
+    <code>build/{taglib}/doc/</code> directory can be set
+    as the document root, and the application can be executed directly.</li>
+<li><b>examples</b> -- Update the intermediate form of the examples
+    application (including copying the library classes into WEB-INF/classes).
+    If your servlet container can accept an unpacked web application (as Tomcat
+    can), the <code>build/{taglib}/examples/</code> directory can
+    be set as the document root, and the application can be executed directly.</li>
+<li><b>library-dist</b> -- Build and copy the <code>{taglib}.jar</code>
+    and <code>{taglib}.jar</code> files for this tag library into the
+    distribution directory (<code>dist/{taglib}/</code>).
+    These distribution files can be copied directly into web applications
+    that wish to use this custom tag library.</li>
+<li><b>documentation-dist</b> -- Build the <code>{taglib}-doc.war</code>
+    documentation application, and copy it into the distribution directory
+    (<code>dist/{taglib}/</code>).  This application can be
+    deployed and executed on any servlet container.</li>
+<li><b>examples-dist</b> -- Build the <code>{taglib}-examples.war</code>
+    examples application, and copy it into the distribution directory
+    (<code>dist/{taglib}/</code>).  This application can
+    be deployed and executed on any servlet container.</li>
+<li><b>dist</b> -- Short cut command that builds all three
+    distribution targets (<code>library-dist</code>, <code>documentation-dist</code>,
+    and <code>examples-dist</code>).</li>
+<li><b>clean</b> -- Deletes the intermediate and distribution results
+    for this custom tag library, so that you can rebuild from scratch.</li>
+</ul>
+</p>
+
+<p>The following directory and files are created when doing a build:
+<ul>
+<li><b>build/{taglib-name}/</b> - Location of all directories and
+    files built for the taglib.</li>
+<li><b>build/{taglib-name}/{taglib-name}/</b> - Compiled java class files
+    for taglib which are used to create the <code>{taglib-name}.jar</code> file.</li>
+<li><b>build/{taglib-name}/{taglib-name}-doc/</b> - Files used to create
+    the <code>{taglib-name}-doc.war</code> file and the intro.html file
+    which gets published to
+    http://jakarta.apache.org/taglibs/doc/{taglib-name}-doc/intro.html.</li>
+<li><b>build/{taglib-name}/{taglib-name}-examples/</b> - Files used to create 
+    the <code>{taglib-name}-examples.war</code> file.</li>
+</ul>
+</p>
+
+<p>The following directory and files are created when doing a distribution build:
+<ul>
+<li><b>dist/{taglib-name}/</b> - Location of all files built for a binary
+    distribution of the taglib.</li>
+<li><b>dist/{taglib-name}/taglibs-{taglib-name}.jar</b> - Jar of java classes for tag library.</li>
+<li><b>dist/{taglib-name}/taglibs-{taglib-name}.tld</b> - Tag Lib Descriptor for tag library.</li>
+<li><b>dist/{taglib-name}/{taglib-name}-doc.war</b> - Tag Library documentation war file.</li>
+<li><b>dist/{taglib-name}/{taglib-name}-examples.war</b> - Tag Library examples war file.</li>
+</ul>
+</p>
+
+<p>When you perform a global build, the <b>dist</b> build target is invoked
+on each included subproject.</p>
+
+<p>Refer to the <a href="addtaglib.html">Adding a Taglib</a> for information
+on how to add a new JSP Custom Tag Library or Extensions to JAKARTA-TAGLIBS.</p>
+</section>
+  </body>
+</document>

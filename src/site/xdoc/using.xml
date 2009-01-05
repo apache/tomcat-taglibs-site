@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<document url="./binarydist.xml">
+
+  <properties>
+    <author>Craig R. McClanahan</author>
+    <title>Using the JAKARTA-TAGLIBS Binary Distribution</title>
+  </properties>
+
+  <body>
+
+<section name="Download and Installation" href="Download">
+
+<p>Binary downloads of nightly builds and released versions of the JAKARTA-TAGLIBS
+distribution, as with all other Jakarta projects, are available from the Jakarta web site,
+at <a href="http://jakarta.apache.org/site/downloads/downloads_taglibs.html">http://jakarta.apache.org/site/downloads/downloads_taglibs.html</a>.
+Download and unpack the distribution archive into a convenient subdirectory.
+</p>
+</section>
+
+<section name="Distribution Directory Structure" href="Directories">
+
+<p>The distribution archive will contain the following file and directory
+structure:
+
+<ul>
+<li><b>LICENSE</b> - A copy of the Apache Software Foundation
+    license under which all Jakarta project software is distributed.</li>
+<li><b>README</b> - A brief README file that contains pointers
+    to the documentation that is available.</li>
+<li><b>doc</b> - A directory containing documentation about the
+    JAKARTA-TAGLIBS project as a whole, including this file.  The following
+    documents are included:
+    <ul>
+    <li><a href="binarydist.html">Using the JAKARTA-TAGLIBS Binary
+        Distribution</a> (this document)</li>
+    <li><a href="sourcedist.html">Using the JAKARTA-TAGLIBS Source
+        Distribution</a></li>
+    <li><a href="addtaglib.html">Adding a Custom Tag Library or Extension to
+        JAKARTA-TAGLIBS</a></li>
+    <li><a href="guidelines.html">Taglib Developer Guidelines</a></li>
+    </ul>
+</li>
+<li>A directory for each custom tag library included in the JAKARTA-TAGLIBS
+    project, where the directory name matches the short name of that project.
+    Each directory will contain the following files, where
+    <code>{library}</code> represents that project's short name:
+    <ul>
+    <li><b>{library}.tld</b> - The <i>tag library descriptor</i> file for
+        this custom tag library.  This file will normally be copied to the
+        <code>/WEB-INF</code> subdirectory within your web application, and
+        referenced with a <code>&lt;taglib&gt;</code> element in the web
+        application deployment descriptor (<code>/WEB-INF/web.xml</code>) file.</li>
+    <li><b>{library}.jar</b> - A JAR file containing the Java classes and
+        associated resources that comprise this custom tag library.  This file
+        will normally be copied to the <code>/WEB-INF/lib</code> subdirectory
+        within your web application, which makes these classes automatically
+        visible within your application.</li>
+    <li><b>{library}-doc.war</b> - A web application containing developer
+        documentation describing how to use the tags in this custom tag library
+        in your own application.  This web application can be deployed and
+        executed on any servlet container that is compatible with the Servlet
+        API Specification, version 2.2 or later.</li>
+    <li><b>{library}-examples.war</b> - A web application containing one or
+        more examples that illustrate the use of this custom tag library.
+        This web application can be deployed and executed on any servlet
+        container that is compatible with the Servlet API Specification,
+        version 2.2 or later.</li>
+    </ul>
+</li>
+</ul>
+</p>
+</section>
+
+<section name="Using a Custom Tag Library in Your Application" href="Using">
+
+<p>To use one or more of the custom tag libraries included in JAKARTA-TAGLIBS
+in your own web applications, follow these steps:
+
+<ul>
+<li>Copy the <code>{library}.tld</code> file to the <code>/WEB-INF</code>
+    subdirectory of your web application.</li>
+<li>Copy the <code>{library}.jar</code> file to the <code>/WEB-INF/lib</code>
+    subdirectory of your web application.</li>
+<li>Install additional JAR files for libraries required by the custom tag
+    library you wish to use (see the library documentation for information)
+    in the <code>/WEB-INF/lib</code> subdirectory of your web application.</li>
+<li>For each tag library you are going to use, add a
+    <code>&lt;taglib&gt;</code> element to your web application deployment
+    descriptor (<code>/WEB-INF/web.xml)</code>) file.  An example entry might
+    look like this:
+    <pre>
+    &lt;taglib&gt;
+	&lt;taglib-uri&gt;http://jakarta.apache.org/taglibs/{library}&lt;/taglib-uri&gt;
+	&lt;taglib-location&gt;/WEB-INF/{library}.tld&lt;/taglib-location&gt;
+    &lt;/taglib&gt;
+    </pre></li>
+<li>At the top of each JSP page in your application that needs to use one or
+    more tags from this custom tag library, add a
+    <code>&lt;%@ taglib %&gt;</code> directive identifying the URI of the library
+    you want to use (which must match the value you specified in the
+    <code>&lt;taglib-uri&gt;</code> element in the web application deployment
+    descriptor), and the tagname prefix you will use within this page to
+    identify tags from this library.  An example entry might look like this:
+    <pre>
+    &lt;%@ taglib uri="http://jakarta.apache.org/taglibs/{library}" prefix="x" %&gt;
+    </pre></li>
+<li>Whenever you wanted to use one of the tags from this library, you would
+    simply include it, prefixed as you described in the <code>taglib</code>
+    directive, and including attribute names and values as described in the
+    documentation for this tag library.  For example, if the library you are
+    using has a tag named <code>magic</code>, and you selected the "x"
+    prefix as described above, you would might include this custom tag:
+    <pre>
+    &lt;x:magic/&gt;
+    </pre>
+    or, if this tag required attributes and perhaps some body text:
+    <pre>
+    &lt;x:magic id="beanName" name="xyz"&gt;
+	... Some body text and/or nested tags ...
+    &lt;/x:magic&gt;
+    </pre></li>
+<li>See the documentation provided with each custom tag library for
+    detailed descriptions of the available tags within that library.</li>
+</ul>
+</p>
+</section>
+  </body>
+</document>
