@@ -27,6 +27,7 @@
       <item name="Downloads"             href="http://jakarta.apache.org/site/downloads/downloads_taglibs.html" />
       <item name="Using"                 href="using.html" />
       <item name="Taglib Tutorial"       href="tutorial.html" />
+      <item name="News Archives"         href="news.html" />
     </menu>
     <menu name="Digging into Jakarta Taglibs">
       <item name="Wiki"                  href="http://wiki.apache.org/jakarta-taglibs/FrontPage" />
@@ -35,24 +36,45 @@
       <item name="Mailing Lists"         href="mail-lists.html" />
       <item name="Building"              href="building.html" />
     </menu>
-    <menu name="JSP Taglibs">
-      <item name="JSP 2.1 Taglibs"       href="http://jakarta.apache.org/taglibs/jsp21.html" collapse="true">
-        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/jsp21.html" />
+    <menu name="Get the Taglibs">
+      <item name="Released Taglibs"      href="taglibs.html" collapse="true">
+        <item name="DateTime"            href="doc/datetime-doc/intro.html" />
+        <item name="I18N"                href="doc/i18n-doc/intro.html" />
+        <item name="JNDI"                href="doc/jndi-doc/intro.html" />
+        <item name="Log"                 href="doc/log-doc/intro.html" />
+        <item name="Random"              href="doc/random-doc/intro.html" />
+        <item name="Regexp"              href="doc/regexp-doc/intro.html" />
+        <item name="RDC"                 href="doc/rdc-doc/intro.html" />
+        <item name="Standard 1.0"        href="doc/standard-1.0-doc/intro.html" />
+        <item name="Standard 1.1"        href="doc/standard-doc/intro.html" />
+        <item name="String"              href="doc/string-doc/intro.html" />
       </item> 
-      <item name="JSP 2.0 Taglibs"       href="http://jakarta.apache.org/taglibs/jsp20.html" collapse="true">
-        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/jsp20.html" />
-      </item> 
-      <item name="JSP 1.2 Taglibs"       href="http://jakarta.apache.org/taglibs/jsp12.html" collapse="true">
-        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/jsp12.html" />
+      <item name="Sandboxed Taglibs"     href="sandbox.html" collapse="true">
+        <item name="Iterators"           href="sandbox/doc/iterators-doc/intro.html" />
+        <item name="Unstandard"          href="sandbox/doc/unstandard-doc/intro.html" />
       </item>
-      <item name="JSP 1.1 Taglibs"       href="http://jakarta.apache.org/taglibs/jsp11.html" collapse="true">
-        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/jsp11.html" />
-      </item>
-      <item name="Sandbox Taglibs"       href="http://jakarta.apache.org/taglibs/sandbox.html" collapse="true">
-        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/sandbox.html" />
-      </item>
-      <item name="Deprecated Taglibs"    href="http://jakarta.apache.org/taglibs/dormant.html" collapse="true">
-        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/dormant.html" />
+      <item name="Deprecated Taglibs"    href="dormant.html" collapse="true">
+        <item name="Application"         href="doc/application-doc/intro.html"/>
+        <item name="Benchmark"           href="doc/benchmark-doc/intro.html"/>
+        <item name="BSF"                 href="doc/bsf-doc/intro.html"/>
+        <item name="Cache"               href="doc/cache-doc/intro.html"/>
+        <item name="Data Grid"           href="sandbox/doc/datagrid-doc/intro.html"/>
+        <item name="DBTags"              href="doc/dbtags-doc/intro.html"/>
+        <item name="Image"               href="sandbox/doc/image-doc/intro.html"/>    
+        <item name="Input"               href="doc/input-doc/intro.html"/>
+        <item name="IO"                  href="doc/io-doc/intro.html"/>
+        <item name="JMS"                 href="doc/jmstags-doc/intro.html"/>
+        <item name="Mailer"              href="doc/mailer-doc/intro.html"/>
+        <item name="Mailer 2"            href="sandbox/doc/mailer2-doc/intro.html"/>
+        <item name="Page"                href="doc/page-doc/intro.html"/>
+        <item name="Request"             href="doc/request-doc/intro.html"/>
+        <item name="Response"            href="doc/response-doc/intro.html"/>
+        <item name="Scrape"              href="doc/scrape-doc/intro.html"/>      
+        <item name="Session"             href="doc/session-doc/intro.html"/>
+        <item name="UltraDev 4.0 Tool Extension" href="doc/ultradev4-doc/intro.html"/>
+        <item name="Utility"             href="doc/utility-doc/intro.html"/>
+        <item name="XSL"                 href="doc/xsl-doc/intro.html"/>
+        <item name="XTags"               href="doc/xtags-doc/intro.html"/>      
       </item>
     </menu>
     <menu name="ASF">
