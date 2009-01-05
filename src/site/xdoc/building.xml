@@ -370,8 +370,6 @@ DOS script.
 <p>When you perform a global build, the <b>dist</b> build target is invoked
 on each included subproject.</p>
 
-<p>Refer to the <a href="addtaglib.html">Adding a Taglib</a> for information
-on how to add a new JSP Custom Tag Library or Extensions to JAKARTA-TAGLIBS.</p>
 </section>
   </body>
 </document>
