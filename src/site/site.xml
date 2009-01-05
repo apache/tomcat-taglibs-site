@@ -27,24 +27,32 @@
       <item name="Downloads"             href="http://jakarta.apache.org/site/downloads/downloads_taglibs.html" />
       <item name="Using"                 href="binarydist.html" />
       <item name="Taglib Tutorial"       href="tutorial.html" />
-      <item name="Reporting Bugs"        href="bugs.html" />
     </menu>
     <menu name="Digging into Jakarta Taglibs">
-      <item name="Volunteering"          href="http://jakarta.apache.org/taglibs/volunteering.html" />
-      <item name="Contributing Patches"  href="http://jakarta.apache.org/taglibs/patches.html" />
-      <item name="Building Components"   href="http://jakarta.apache.org/taglibs/building.html" />
-      <item name="Releasing Components"  href="http://jakarta.apache.org/taglibs/releases/index.html" />
       <item name="Wiki"                  href="http://wiki.apache.org/jakarta-taglibs/FrontPage" />
+      <item name="CI"                    href="integration.html" />
+      <item name="Bugs"                  href="issue-tracking.html" />
+      <item name="Mailing Lists"         href="mail-lists.html" />
+      <item name="Building"              href="developing.html" />
     </menu>
     <menu name="JSP Taglibs">
-      <item name="JSP 2.0 Taglibs"       href="http://jakarta.apache.org/taglibs/components.html" collapse="true">
-        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/components.html" />
+      <item name="JSP 2.1 Taglibs"       href="http://jakarta.apache.org/taglibs/jsp21.html" collapse="true">
+        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/jsp21.html" />
       </item> 
-      <item name="JSP 1.2 Taglibs"       href="http://jakarta.apache.org/taglibs/sandbox/index.html" collapse="true">
-        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/sandbox/index.html" />
+      <item name="JSP 2.0 Taglibs"       href="http://jakarta.apache.org/taglibs/jsp20.html" collapse="true">
+        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/jsp20.html" />
+      </item> 
+      <item name="JSP 1.2 Taglibs"       href="http://jakarta.apache.org/taglibs/jsp12.html" collapse="true">
+        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/jsp12.html" />
       </item>
-      <item name="Dormant"               href="http://jakarta.apache.org/taglibs/dormant/index.html" collapse="true">
-        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/dormant/index.html" />
+      <item name="JSP 1.1 Taglibs"       href="http://jakarta.apache.org/taglibs/jsp11.html" collapse="true">
+        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/jsp11.html" />
+      </item>
+      <item name="Sandbox Taglibs"       href="http://jakarta.apache.org/taglibs/sandbox.html" collapse="true">
+        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/sandbox.html" />
+      </item>
+      <item name="Deprecated Taglibs"    href="http://jakarta.apache.org/taglibs/dormant.html" collapse="true">
+        <item name="Full list..."        href="http://jakarta.apache.org/taglibs/dormant.html" />
       </item>
     </menu>
     <menu name="ASF">
