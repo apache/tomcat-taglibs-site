@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+<document>
+  <properties>
+    <title>Jakarta Taglibs</title>
+    <author email="taglibs-dev@jakarta.apache.org">Jakarta Taglibs Team</author>
+  </properties>
+  <body>
+    <section name="Jakarta Taglibs">
+     <p> 
+      This project is an open source repository for JSP(tm) Tag Libraries. 
+     </p>
+     <p>
+      In particular, Jakarta Taglibs hosts an implementation of the
+      <a href="http://java.sun.com/products/jsp/jstl">JSP Standard Tag Library specification</a> - the 
+      <a href="doc/standard-doc/intro.html">Jakarta Standard Taglib</a>. Versions 1.0 and 1.1 of JSTL are implemented, and a 2.0 implementation is in the works. 
+     </p>
+    </section>
+
+    <section name="JSP Specifications">
+     <p>The final version of the <a href="http://jcp.org/en/jsr/detail?id=245">JSP 2.1 specification</a> was released on the 11th of May 2006. </p>
+     <p>The final version of the <a href="http://jcp.org/en/jsr/detail?id=53">JSP 1.2 specification</a> was released on the 25th of September 2001. </p>
+    </section>
+    
+    <section name="News">
+
+<table border="0" cellspacing="5" cellpadding="5" width="100%"><tr><td bgcolor="#023264"><font color="#ffffff" face="arial,helvetica,sanserif" size="+1"><strong>News</strong></font></td></tr><tr><td>
+    <table cellpadding="2">
+
+      <tr><td bgcolor="#CCCCCC"><b><font size="-1">2009/01/??</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
+    [ALL]
+  </font><font size="-1">
+        The majority of taglibs are being migrated to Maven2 and a new site has been created. 
+      </font></td></tr>
+
+      <tr><td bgcolor="#CCCCCC"><b><font size="-1">2008/12/21</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
+    [<a href="doc/standard-doc/intro.html">Standard</a>]
+  </font><font size="-1">
+        A <a href="https://issues.apache.org/bugzilla/show_bug.cgi?id=45197">patch</a> from Robert Goff has moved the 
+        trunk of the Jakarta Standard Taglib up to JSTL 2.0 level. A release is in the works. 
+      </font></td></tr>
+
+    </table>
+  </td></tr></table>
+
+
+    </section>
+  </body>
+</document>
