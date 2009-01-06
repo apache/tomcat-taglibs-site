@@ -33,7 +33,7 @@
 
   <url>http://jakarta.apache.org/taglibs/</url>
 
-  <inceptionYear>2009</inceptionYear>
+  <inceptionYear>2000</inceptionYear>
 
   <scm>
     <connection>scm:svn:http://svn.apache.org/repos/asf/jakarta/taglibs/proper/site/trunk</connection>
