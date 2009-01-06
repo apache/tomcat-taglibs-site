@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<document url="./guidelines.xml">
+
+  <properties>
+    <author>Shawn Bayern</author>
+    <title>Taglib Developer Guidelines</title>
+  </properties>
+
+  <body>
+
+
+  <section name="Taglib Developer Guidelines" href="Guidelines">
+    <p>This guide attempts to give Tag Library authors a summary
+      of guidelines and issues to be careful of when developing custom JSP tags.
+    </p>
+
+  <section name="Guidelines for tag lifecycle management" href="Lifecycle">    
+    <ol>
+      <li>
+        Properties are expected to remain consistent.  This means that:
+        <ul>
+          <li>
+            user code should avoid calling a a setter method of a tag handler
+            for properties that correspond to tag attributes.  That is, if
+            a tag has a "value" attribute, user code should avoid calling
+            setValue() for that tag's handler.
+          </li>
+          <li>
+            the tag handler's code itself should not modify properties that are
+            set by a setXXX() method
+          </li>
+          <li>
+            tag handlers should not perform invocation-specific logic in a
+            setXXX() method.  That is, the setting of a property should
+            have no side effects.
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        Private, invocation-specific state must be managed manually.  
+        Implications include that:
+        <ul>
+          <li>
+            release() is not necessarily called between invocations, which
+            means that tag logic should not count on private invocation-
+            specific state being reset by release()
+          </li>
+          <li>
+            doEndTag() is not necessarily called at the end of every invocation
+            (in cases of abnormal termination -- e.g., an exception thrown inside
+            a tag's body or by one of its methods)
+          </li>
+          <li>
+            private invocation-specific state is thus best initialized in
+            doStartTag()
+          </li>
+          <li>
+            doFinally() *is* always called for tag handlers that implement
+            TryCatchFinally, so this method should be used if any invocation-
+            specific resources need to be released
+          </li>
+          <li>
+            release() *is* always called at least once for a tag handler before
+            it is garbage-collected, so this method can and should be used to
+            release any long-term resources
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        Since tags may be re-used, user code should not refer to a tag handler
+        beyond its natural scope.  This implies:
+        <ul>
+          <li>
+            a tag handler must not expose itself as a scripting variable if
+            that variable has AT_BEGIN or AT_END scope (although NESTED scope
+            would not be problematic in this case).
+          </li>
+          <li>
+            a tag handler should not set a reference to itself in the
+            PageContext associated with the page for which it is invoked,
+            unless expected use of such a reference would occur only during
+            the invocation of the tag handler.
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+
+  <section name="Examples" href="Examples">    
+    <ol>
+      <li>
+        Suppose you have a tag that accepts some sort of expression that you
+        need to resolve, e.g.:
+
+        <pre>&lt;show value="$my-expression$"/&gt;</pre>
+
+        <p>  
+          "$my-expression$" should be stored by setValue() and evaluated (i.e.,
+          resolved) in doStartTag().  For the behavior that's almost always
+          desired, it should NOT be evaluated in setValue().  (Validation, such
+          as syntax checking, is acceptable in the setter method.)
+        </p>
+        <p>
+          Similarly, Iterators and Enumerations should not be extracted in a
+          setXXX() method.  setXXX() methods are meant to be "idempotent";
+          write them so that they can be called multiple times with no
+          side effects (and, conversely, only once instead of multiple times
+          if the argument passed is the same).
+        </p>
+      </li>
+      <li>
+        Private state that's kept for each invocation should typically be
+        reset in doStartTag(), not in release().  If you have an iteration
+        index controlling the behavior of a loop, doStartTag() is the
+        appropriate method from which to initialize it.
+      </li>
+      <li>
+        If a tag needs to open a new database connection (or file, or other
+        external resource) for every invocation, the tag handler should
+        implement TryCatchFinally and close the database connection (or
+        other resource) in doFinally().  doEndTag() might not be called,
+        and release() might not be called until long after you expect it to be.
+      </li>
+    </ol>
+  </section>
+
+  </section>
+
+
+
+  </body>
+</document>
