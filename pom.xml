@@ -28,7 +28,7 @@
 
   <artifactId>site</artifactId>
   <version>1-SNAPSHOT</version>
-  <name>Jakarta Taglibs</name>
+  <name>Jakarta Taglibs Site</name>
   <packaging>pom</packaging>  <!-- site? -->
 
   <url>http://jakarta.apache.org/taglibs/</url>
