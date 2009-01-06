@@ -35,8 +35,6 @@ structure:
         Distribution</a> (this document)</li>
     <li><a href="sourcedist.html">Using the JAKARTA-TAGLIBS Source
         Distribution</a></li>
-    <li><a href="addtaglib.html">Adding a Custom Tag Library or Extension to
-        JAKARTA-TAGLIBS</a></li>
     <li><a href="guidelines.html">Taglib Developer Guidelines</a></li>
     </ul>
 </li>
