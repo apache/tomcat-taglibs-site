@@ -28,13 +28,13 @@
       <tr><td><a href="../doc/rdc-doc/intro.html">RDC</a></td><td>2.0+</td></tr>
       <tr><td><a href="../doc/standard-doc/intro.html">Standard 1.1</a></td><td>2.0+</td></tr>
       <tr><td><a href="../doc/standard-1.0-doc/intro.html">Standard 1.0</a></td><td>1.2+</td></tr>
-      <tr><td><a href="../doc/datetime-doc/intro.html">DateTime</a></td><td>1.1+</td></tr>
-      <tr><td><a href="../doc/i18n-doc/intro.html">I18N</a></td><td>1.1+</td></tr>
-      <tr><td><a href="../doc/jndi-doc/intro.html">JNDI</a></td><td>1.1+</td></tr>
-      <tr><td><a href="../doc/log-doc/intro.html">Log</a></td><td>1.1+</td></tr>
-      <tr><td><a href="../doc/random-doc/intro.html">Random</a></td><td>1.1+</td></tr>
-      <tr><td><a href="../doc/regexp-doc/intro.html">Regexp</a></td><td>1.1+</td></tr>
-      <tr><td><a href="../doc/string-doc/intro.html">String</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../datetime/">DateTime</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../i18n/">I18N</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../jndi/">JNDI</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../log/">Log</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../random/">Random</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../regexp/">Regexp</a></td><td>1.1+</td></tr>
+      <tr><td><a href="../string/">String</a></td><td>1.1+</td></tr>
      </table>
     </section>
   </body>
