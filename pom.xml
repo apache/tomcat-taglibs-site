@@ -41,4 +41,12 @@
     <url>http://svn.apache.org/viewvc/jakarta/taglibs/proper/site/trunk</url>
   </scm>
 
+  <distributionManagement>
+    <site>
+      <id>apache.website</id>
+      <name>Apache Website</name>
+      <url>scp://people.apache.org/www/jakarta.apache.org/taglibs/</url>
+    </site>
+  </distributionManagement>
+
 </project>
