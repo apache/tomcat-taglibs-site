@@ -45,7 +45,7 @@
     <site>
       <id>apache.website</id>
       <name>Apache Website</name>
-      <url>scp://people.apache.org/www/jakarta.apache.org/taglibs/</url>
+      <url>scpexe://people.apache.org/www/jakarta.apache.org/taglibs/</url>
     </site>
   </distributionManagement>
 
