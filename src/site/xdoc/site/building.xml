@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<document url="./sourcedist.xml">
+
+  <properties>
+    <title>Building Jakarta Taglibs</title>
+  </properties>
+
+  <body>
+
+<section name="Prerequisites">
+
+  <p>To build Jakara Taglibs packages you need to install <a href="http://maven.apache.org">Maven 2</a>. </p>
+
+</section>
+
+<section name="Building">
+
+  <b>The following applies to trunk and any releases containing a pom.xml. If the release contains a build.xml, refer to the <a href="legacybuilding.html">Legacy Building</a> page. </b>
+
+  <p>Until we release the <i>Parent POM</i>, you will first need to svn checkout the 
+     <a href="http://svn.apache.org/repos/asf/jakarta/taglibs/proper/taglibs-parent/trunk">taglibs-parent</a>:</p>
+
+  <pre>svn co https://svn.apache.org/repos/asf/jakarta/taglibs/proper/taglibs-parent/trunk taglibs-parent</pre>
+
+  <p>Then you should execute <code>mvn clean install</code>. Once you have done this you are ready to build the taglib. </p>
+
+  <p>Obtain your taglib, either from a source download or from svn. To build a taglib, execute <code>mvn clean package</code>. </p>
+
+</section>
+
+<section name="Building the site">
+
+  <p>The main site is built by checking out the site/ directory: </p>
+
+  <pre>svn co http://svn.apache.org/repos/asf/jakarta/taglibs/proper/site site</pre>
+
+  <p>Taglib specific sites are built by directly from that taglib. </p>
+
+  <p>To build either - execute <code>mvn clean site</code>. </p>
+
+</section>
+
+<section name="Releasing">
+
+    <p>To build the tar.gz or .zip for a Taglibs release, execute <code>mvn clean assembly:assembly</code>. </p>
+
+</section>
+
+  </body>
+</document>
