@@ -25,7 +25,7 @@
     <section name="Taglibs">
      <table>
       <tr><th>Name</th><th>JSP version</th></tr>
-      <tr><td><a href="../doc/rdc-doc/intro.html">RDC</a></td><td>2.0+</td></tr>
+      <tr><td><a href="../rdc/">RDC</a></td><td>2.0+</td></tr>
       <tr><td><a href="../doc/standard-doc/intro.html">Standard 1.1</a></td><td>2.0+</td></tr>
       <tr><td><a href="../doc/standard-1.0-doc/intro.html">Standard 1.0</a></td><td>1.2+</td></tr>
       <tr><td><a href="../datetime/">DateTime</a></td><td>1.1+</td></tr>
