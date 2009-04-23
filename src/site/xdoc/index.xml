@@ -29,7 +29,7 @@
      <p>
       In particular, Jakarta Taglibs hosts an implementation of the
       <a href="http://java.sun.com/products/jsp/jstl">JSP Standard Tag Library specification</a> - the 
-      <a href="doc/standard-doc/intro.html">Jakarta Standard Taglib</a>. Versions 1.0 and 1.1 of JSTL are implemented, and a 2.0 implementation is in the works. 
+      <a href="doc/standard-doc/intro.html">Jakarta Standard Taglib</a>. Versions 1.0 and 1.1 of JSTL are implemented, and a 1.2 implementation is in the works. 
      </p>
     </section>
 
@@ -53,7 +53,7 @@
     [<a href="doc/standard-doc/intro.html">Standard</a>]
   </font><font size="-1">
         A <a href="https://issues.apache.org/bugzilla/show_bug.cgi?id=45197">patch</a> from Robert Goff has moved the 
-        trunk of the Jakarta Standard Taglib up to JSTL 2.0 level. A release is in the works. 
+        trunk of the Jakarta Standard Taglib up to JSTL 1.2 level. A release is in the works. 
       </font></td></tr>
 
     </table>
