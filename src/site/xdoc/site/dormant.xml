@@ -31,13 +31,16 @@
       <tr><td><a href="../doc/application-doc/">Application</a></td><td>1.1+</td><td><a href="http://jakarta.apache.org/site/downloads/downloads_taglibs-application.cgi">download</a></td></tr>
       <tr><td><a href="../doc/benchmark-doc/">Benchmark</a></td><td>1.1+</td><td><a href="http://jakarta.apache.org/site/downloads/downloads_taglibs-benchmark.cgi">download</a></td></tr>
       <tr><td><a href="../doc/bsf-doc/">BSF</a></td><td>1.1+</td><td><a href="http://svn.apache.org/repos/asf/jakarta/taglibs/deprecated/bsf/trunk/">svn</a></td></tr>
+      <tr><td><a href="../datetime/">DateTime</a></td><td>1.1+</td><td><a href="http://jakarta.apache.org/site/downloads/downloads_taglibs-datetime.cgi">download</a></td></tr>
       <tr><td><a href="../doc/dbtags-doc/">DBTags</a></td><td>1.1+</td><td><a href="http://jakarta.apache.org/site/downloads/downloads_taglibs-dbtags.cgi">download</a></td></tr>
+      <tr><td><a href="../i18n/">I18N</a></td><td>1.1+</td><td><a href="http://svn.apache.org/repos/asf/jakarta/taglibs/deprecated/i18n/trunk/">svn</a></td></tr>
       <tr><td><a href="../sandbox/doc/image-doc/">Image</a></td><td>1.1+</td><td><a href="http://svn.apache.org/repos/asf/jakarta/taglibs/deprecated-sandbox/image/trunk/">svn</a></td></tr>
       <tr><td><a href="../doc/input-doc/">Input</a></td><td>1.1+</td><td><a href="http://svn.apache.org/repos/asf/jakarta/taglibs/deprecated/input/trunk/">svn</a></td></tr>
       <tr><td><a href="../doc/io-doc/">IO</a></td><td>1.1+</td><td><a href="http://svn.apache.org/repos/asf/jakarta/taglibs/deprecated/io/trunk/">svn</a></td></tr>
       <tr><td><a href="../doc/jmstags-doc/">JMS</a></td><td>1.1+</td><td><a href="http://svn.apache.org/repos/asf/jakarta/taglibs/deprecated/jmstags/trunk/">svn</a></td></tr>
       <tr><td><a href="../doc/mailer-doc/">Mailer</a></td><td>1.1+</td><td><a href="http://jakarta.apache.org/site/downloads/downloads_taglibs-mailer.cgi">download</a></td></tr>
       <tr><td><a href="../doc/page-doc/">Page</a></td><td>1.1+</td><td><a href="http://jakarta.apache.org/site/downloads/downloads_taglibs-page.cgi">download</a></td></tr>
+      <tr><td><a href="../random/">Random</a></td><td>1.1+</td><td><a href="http://jakarta.apache.org/site/downloads/downloads_taglibs-random.cgi">download</a></td></tr>
       <tr><td><a href="../doc/request-doc/">Request</a></td><td>1.1+</td><td><a href="http://jakarta.apache.org/site/downloads/downloads_taglibs-request.cgi">download</a></td></tr>
       <tr><td><a href="../doc/response-doc/">Response</a></td><td>1.1+</td><td><a href="http://jakarta.apache.org/site/downloads/downloads_taglibs-response.cgi">download</a></td></tr>
       <tr><td><a href="../doc/scrape-doc/">Scrape</a></td><td>1.1+</td><td><a href="http://svn.apache.org/repos/asf/jakarta/taglibs/deprecated/scrape/trunk/">svn</a></td></tr>
