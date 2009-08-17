@@ -36,9 +36,9 @@
   <inceptionYear>2000</inceptionYear>
 
   <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/jakarta/taglibs/proper/site</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/jakarta/taglibs/proper/site</developerConnection>
-    <url>http://svn.apache.org/viewvc/jakarta/taglibs/proper/site</url>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/tomcat/taglibs/site</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/tomcat/taglibs/site</developerConnection>
+    <url>http://svn.apache.org/viewvc/tomcat/taglibs/site</url>
   </scm>
 
   <distributionManagement>
