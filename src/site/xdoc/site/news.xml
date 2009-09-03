@@ -28,6 +28,19 @@
 <table border="0" cellspacing="5" cellpadding="5" width="100%"><tr><td bgcolor="#023264"><font color="#ffffff" face="arial,helvetica,sanserif" size="+1"><strong>News</strong></font></td></tr><tr><td>
     <table cellpadding="2">
 
+      <tr><td bgcolor="#CCCCCC"><b><font size="-1">2009/06/07</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
+    [ALL]
+  </font><font size="-1">
+        The Standard and RDC Taglibs have moved over to Tomcat. All other taglibs back at Jakarta have been deprecated 
+        and a new Extended Taglib created. 
+      </font></td></tr>
+
+      <tr><td bgcolor="#CCCCCC"><b><font size="-1">2009/06/07</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
+    [ALL]
+  </font><font size="-1">
+        DateTime, Random and I18N taglibs have been deprecated. JSTL replaced the majority of their features. 
+      </font></td></tr>
+
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">2009/01/06</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
     [ALL]
   </font><font size="-1">
