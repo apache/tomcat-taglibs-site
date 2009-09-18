@@ -10,11 +10,13 @@
 
 <section name="Download and Installation" href="Download">
 
-<p>Binary downloads of nightly builds and released versions of the JAKARTA-TAGLIBS
-distribution, as with all other Jakarta projects, are available from the Jakarta web site,
+<p>Binary downloads of released versions of the Apache Taglibs
+distributions are available via the download link - 
 at <a href="http://jakarta.apache.org/site/downloads/downloads_taglibs.html">http://jakarta.apache.org/site/downloads/downloads_taglibs.html</a>.
 Download and unpack the distribution archive into a convenient subdirectory.
 </p>
+<p>Note that for now, these distributions are legacy versions from the Jakarta Taglibs days. While current development is built 
+using Maven, the binary builds were created, and the source builds require, an Ant build system. </p>
 </section>
 
 <section name="Distribution Directory Structure" href="Directories">
@@ -33,8 +35,8 @@ structure:
     <ul>
     <li><a href="binarydist.html">Using the JAKARTA-TAGLIBS Binary
         Distribution</a> (this document)</li>
-    <li><a href="sourcedist.html">Using the JAKARTA-TAGLIBS Source
-        Distribution</a></li>
+    <li><a href="legacybuilding.html">Building the old JAKARTA-TAGLIBS Source
+        Distributions</a></li>
     <li><a href="guidelines.html">Taglib Developer Guidelines</a></li>
     </ul>
 </li>
