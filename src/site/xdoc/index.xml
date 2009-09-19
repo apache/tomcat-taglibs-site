@@ -18,18 +18,18 @@
 
 <document>
   <properties>
-    <title>Jakarta Taglibs</title>
-    <author email="taglibs-dev@jakarta.apache.org">Jakarta Taglibs Team</author>
+    <title>Apache Taglibs</title>
+    <author email="dev@tomcat.apache.org">Apache Taglibs Team</author>
   </properties>
   <body>
-    <section name="Jakarta Taglibs">
+    <section name="Apache Taglibs">
      <p> 
       This project is an open source repository for JSP(tm) Tag Libraries. 
      </p>
      <p>
-      In particular, Jakarta Taglibs hosts an implementation of the
+      In particular, Apache Taglibs hosts an implementation of the
       <a href="http://java.sun.com/products/jsp/jstl">JSP Standard Tag Library specification</a> - the 
-      <a href="doc/standard-doc/intro.html">Jakarta Standard Taglib</a>. Versions 1.0 and 1.1 of JSTL are implemented, and a 1.2 implementation is in the works. 
+      <a href="standard/">Apache Standard Taglib</a>. Versions 1.0 and 1.1 of JSTL are implemented, and a 1.2 implementation is in the works. 
      </p>
     </section>
 
