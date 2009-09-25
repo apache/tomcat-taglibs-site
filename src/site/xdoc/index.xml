@@ -63,7 +63,7 @@
       </font></td></tr>
 
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">2008/12/21</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/standard-doc/intro.html">Standard</a>]
+    [<a href="standard/">Standard</a>]
   </font><font size="-1">
         A <a href="https://issues.apache.org/bugzilla/show_bug.cgi?id=45197">patch</a> from Robert Goff has moved the 
         trunk of the Jakarta Standard Taglib up to JSTL 1.2 level. A release is in the works. 
