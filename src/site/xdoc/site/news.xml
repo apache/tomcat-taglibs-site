@@ -48,7 +48,7 @@
       </font></td></tr>
 
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">2008/12/21</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/standard-doc/intro.html">Standard</a>]
+    [<a href="../standard/">Standard</a>]
   </font><font size="-1">
         A <a href="https://issues.apache.org/bugzilla/show_bug.cgi?id=45197">patch</a> from Robert Goff has moved the 
         trunk of the Jakarta Standard Taglib up to JSTL 2.0 level. A release is in the works. 
@@ -56,14 +56,14 @@
 
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">08/04/2005</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
 
-    [<a href="doc/rdc-doc/intro.html">RDC</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/rdc-doc/intro.html">RDC</a>]
   </font><font size="-1">
         The Reusable Dialog Components (RDC) Taglib has
         <a href="http://jakarta.apache.org/site/news/news-2005-q3.html#20050804.1">
         migrated</a> to Taglibs-Proper after its graduation from Taglibs-Sandbox.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">07/26/2005</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/rdc-doc/intro.html">RDC</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/rdc-doc/intro.html">RDC</a>]
   </font><font size="-1">
 
         Version 1.0.0 of the Reusable Dialog Components (RDC) Taglib has been 
@@ -71,7 +71,7 @@
         released</a>.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">10/25/2004</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/standard-doc/intro.html">standard</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/standard-doc/intro.html">standard</a>]
   </font><font size="-1">
         Version 1.1.2 of the Standard Taglib 1.1 (JSTL 1.1) has been 
         <a href="http://jakarta.apache.org/site/binindex.cgi#Release%20Builds">
@@ -79,7 +79,7 @@
         released</a>.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">07/20/2004</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/standard-doc/intro.html">standard</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/standard-doc/intro.html">standard</a>]
   </font><font size="-1">
         Version 1.1.1 of the Standard Taglib 1.1 (JSTL 1.1) has been 
         <a href="http://jakarta.apache.org/site/binindex.cgi#Release%20Builds">
@@ -87,7 +87,7 @@
       </font></td></tr>
 
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">07/20/2004</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/standard-1.0-doc/intro.html">standard-1.0</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/standard-1.0-doc/intro.html">standard-1.0</a>]
   </font><font size="-1">
         Version 1.0.6 of the Standard Taglib 1.0 (JSTL 1.0) has been 
         <a href="http://jakarta.apache.org/site/binindex.cgi#Release%20Builds">
@@ -95,18 +95,18 @@
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">05/17/2004</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
 
-    [<a href="doc/string-doc/intro.html">string</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/string-doc/intro.html">string</a>]
   </font><font size="-1">
         Version 1.1.0 of the String taglib has been released.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">03/15/2004</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/dbtags-doc/intro.html">dbtags</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/dbtags-doc/intro.html">dbtags</a>]
   </font><font size="-1">
         Version 1.0.0 of the DBTags taglib has been released.
       </font></td></tr>
 
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">03/15/2004</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/random-doc/intro.html">random</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/random-doc/intro.html">random</a>]
   </font><font size="-1">
         Version 1.0.2 of the Random taglib has been released.
       </font></td></tr>
@@ -136,93 +136,93 @@
       </font></td></tr>
 
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">02/20/2003</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/standard-doc/intro.html">standard</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/standard-doc/intro.html">standard</a>]
   </font><font size="-1">
        Standard Taglib version 1.0.3 -- another minor bugfix release -- is now
-       <a href="/builds/jakarta-taglibs/releases/standard/">available</a>.
+       <a href="http://jakarta.apache.org/taglibs//builds/jakarta-taglibs/releases/standard/">available</a>.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">02/20/2003</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/string-doc/intro.html">string</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/string-doc/intro.html">string</a>]
   </font><font size="-1">
 
         Version 1.0.1 of the String taglib has been released.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">01/12/2003</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/log-doc/intro.html">log</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/log-doc/intro.html">log</a>]
   </font><font size="-1">
         Version 1.0 of the Log taglib has been released.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">12/6/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
 
-    [<a href="doc/mailer-doc/intro.html">mailer</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/mailer-doc/intro.html">mailer</a>]
   </font><font size="-1">
         Version 1.1 of the Mailer taglib has been released.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">12/1/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/xsl-doc/intro.html">xsl</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/xsl-doc/intro.html">xsl</a>]
   </font><font size="-1">
         The XSL tag library is now deprecated. Use the XTags tag library
         or the Standard tag library.
       </font></td></tr>
 
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">12/1/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/utility-doc/intro.html">utility</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/utility-doc/intro.html">utility</a>]
   </font><font size="-1">
         The Utility tag library is now deprecated. It was only an example.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">12/1/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/application-doc/intro.html">application</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/application-doc/intro.html">application</a>]
   </font><font size="-1">
 
         Version 1.0.1 of the Application taglib has been released.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">12/1/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/datetime-doc/intro.html">datetime</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/datetime-doc/intro.html">datetime</a>]
   </font><font size="-1">
         Version 1.0.1 of the Datetime taglib has been released.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">12/1/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
 
-    [<a href="doc/page-doc/intro.html">page</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/page-doc/intro.html">page</a>]
   </font><font size="-1">
         Version 1.0.1 of the Page taglib has been released.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">12/1/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/random-doc/intro.html">random</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/random-doc/intro.html">random</a>]
   </font><font size="-1">
         Version 1.0.1 of the Random taglib has been released.
       </font></td></tr>
 
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">12/1/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/regexp-doc/intro.html">regexp</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/regexp-doc/intro.html">regexp</a>]
   </font><font size="-1">
         Version 1.0.1 of the Regexp taglib has been released.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">12/1/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/request-doc/intro.html">request</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/request-doc/intro.html">request</a>]
   </font><font size="-1">
 
         Version 1.0.1 of the Request taglib has been released.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">12/1/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/response-doc/intro.html">response</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/response-doc/intro.html">response</a>]
   </font><font size="-1">
         Version 1.0.1 of the Response taglib has been released.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">12/1/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
 
-    [<a href="doc/session-doc/intro.html">session</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/session-doc/intro.html">session</a>]
   </font><font size="-1">
         Version 1.0.1 of the Sessions taglib has been released.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">12/1/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/xsl-doc/intro.html">xsl</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/xsl-doc/intro.html">xsl</a>]
   </font><font size="-1">
         Version 1.0.1 of the XSL taglib has been released.
       </font></td></tr>
 
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">12/1/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/benchmark-doc/intro.html">benchmark</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/benchmark-doc/intro.html">benchmark</a>]
   </font><font size="-1">
         Version 1.0 of the Benchmark taglib has been released.
       </font></td></tr>
@@ -235,7 +235,7 @@
       </font></td></tr>
 
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">10/13/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/standard-doc/intro.html">standard</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/standard-doc/intro.html">standard</a>]
   </font><font size="-1">
        Standard Taglib version 1.0.2 -- another minor bugfix release -- is now
        <a href="http://www.apache.org/dist/jakarta/taglibs/releases/standard/">
@@ -243,7 +243,7 @@
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">10/08/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
 
-    [<a href="doc/string-doc/intro.html">string</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/string-doc/intro.html">string</a>]
   </font><font size="-1">
         Version 1.0 of the String taglib has been released.
       </font></td></tr>
@@ -254,7 +254,7 @@
       </font></td></tr>
 
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">06/21/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/standard-doc/intro.html">standard</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/standard-doc/intro.html">standard</a>]
   </font><font size="-1">
         Final 1.0 release of Jakarta Taglibs's Standard Taglib,
         an implementation of the <b>JSP Standard Tag Library (JSTL)</b>,
@@ -264,24 +264,24 @@
       </font></td></tr>
 
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">06/17/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/standard-doc/intro.html">standard</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/standard-doc/intro.html">standard</a>]
   </font><font size="-1">
         RC1 release of the Standard Taglib.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">04/19/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/standard-doc/intro.html">standard</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/standard-doc/intro.html">standard</a>]
   </font><font size="-1">
 
         Beta 2 release of the Standard Taglib.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">04/14/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="doc/mailer-doc/intro.html">mailer</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/mailer-doc/intro.html">mailer</a>]
   </font><font size="-1">
         Version 1.0 of the Mailer taglib has been released.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">04/02/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
 
-    [<a href="doc/cache-doc/intro.html">cache</a>]
+    [<a href="http://jakarta.apache.org/taglibs/doc/cache-doc/intro.html">cache</a>]
   </font><font size="-1">
         The Cache Taglib, for caching JSP page fragments, is now under
         development.
