@@ -37,7 +37,7 @@
      <p>
       Apache Taglibs was originally called Jakarta Taglibs. When the project changed name, and moved over to coexist 
       with the Tomcat project, many of the original taglibs were retired. See the 
-      <a href="http://jakarta.apache.org/site/retired-taglibs.html">Jakarta Taglibs retirement page</a> for 
+      <a href="http://attic.apache.org/projects/jakarta-taglibs.html">Jakarta Taglibs retirement page</a> for 
       more on these taglibs. 
      </p>
     </section>
