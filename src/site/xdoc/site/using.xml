@@ -10,10 +10,7 @@
 
 <section name="Download and Installation" href="Download">
 
-<p>Binary downloads of released versions of the Apache Taglibs
-distributions are available via the download link - 
-at <a href="http://jakarta.apache.org/site/downloads/downloads_taglibs.html">http://jakarta.apache.org/site/downloads/downloads_taglibs.html</a>.
-Download and unpack the distribution archive into a convenient subdirectory.
+<p>Binary downloads of released versions of the Apache Taglibs distributions are available from each components website. 
 </p>
 <p>Note that for now, these distributions are legacy versions from the Jakarta Taglibs days. While current development is built 
 using Maven, the binary builds were created, and the source builds require, an Ant build system. </p>
