@@ -67,14 +67,14 @@
   </font><font size="-1">
 
         Version 1.0.0 of the Reusable Dialog Components (RDC) Taglib has been 
-        <a href="http://jakarta.apache.org/site/downloads/downloads_taglibs-rdc.cgi">
+        <a href="http://archive.apache.org/dist/jakarta/taglibs/rdc/">
         released</a>.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">10/25/2004</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
     [<a href="http://jakarta.apache.org/taglibs/doc/standard-doc/intro.html">standard</a>]
   </font><font size="-1">
         Version 1.1.2 of the Standard Taglib 1.1 (JSTL 1.1) has been 
-        <a href="http://jakarta.apache.org/site/binindex.cgi#Release%20Builds">
+        <a href="http://archive.apache.org/dist/jakarta/taglibs/standard/">
 
         released</a>.
       </font></td></tr>
@@ -82,7 +82,7 @@
     [<a href="http://jakarta.apache.org/taglibs/doc/standard-doc/intro.html">standard</a>]
   </font><font size="-1">
         Version 1.1.1 of the Standard Taglib 1.1 (JSTL 1.1) has been 
-        <a href="http://jakarta.apache.org/site/binindex.cgi#Release%20Builds">
+        <a href="http://archive.apache.org/dist/jakarta/taglibs/standard/">
         released</a>.
       </font></td></tr>
 
@@ -90,7 +90,7 @@
     [<a href="http://jakarta.apache.org/taglibs/doc/standard-1.0-doc/intro.html">standard-1.0</a>]
   </font><font size="-1">
         Version 1.0.6 of the Standard Taglib 1.0 (JSTL 1.0) has been 
-        <a href="http://jakarta.apache.org/site/binindex.cgi#Release%20Builds">
+        <a href="http://archive.apache.org/dist/jakarta/taglibs/standard/">
         released</a>.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">05/17/2004</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
@@ -113,25 +113,25 @@
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">01/30/2004</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
        Standard Taglib version 1.1.0 - First official release of our 
        implementation of JSTL 1.1 - is now
-       available from the <a href="http://jakarta.apache.org/site/binindex.cgi#Release%20Builds">
+       available from the <a href="http://archive.apache.org/dist/jakarta/taglibs/standard/">
 
        Apache Jakarta Project Mirrors</a>.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">01/30/2004</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
        Standard Taglib version 1.0.5 (JSTL 1.0) - another bugfix release - is now
-       available from the <a href="http://jakarta.apache.org/site/binindex.cgi#Release%20Builds">
+       available from the <a href="http://archive.apache.org/dist/jakarta/taglibs/standard/">
        Apache Jakarta Project Mirrors</a>.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">09/25/2003</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
 
        Standard Taglib version 1.1.0-B1 - early access (Beta 1) of our 
        implementation of JSTL 1.1 - is now
-       available from the <a href="http://jakarta.apache.org/site/binindex.cgi#Release%20Builds">
+       available from the <a href="http://archive.apache.org/dist/jakarta/taglibs/standard/">
        Apache Jakarta Project Mirrors</a>.
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">09/25/2003</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
        Standard Taglib version 1.0.4 (JSTL 1.0) - another bugfix release - is now
-       available from the <a href="http://jakarta.apache.org/site/binindex.cgi#Release%20Builds">
+       available from the <a href="http://archive.apache.org/dist/jakarta/taglibs/standard/">
        Apache Jakarta Project Mirrors</a>.
       </font></td></tr>
 
@@ -249,7 +249,7 @@
       </font></td></tr>
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">7/27/2002</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
        Standard Taglib version 1.0.1 -- a minor bugfix release -- is now
-       <a href="http://www.apache.org/dist/jakarta/taglibs/releases/standard/">
+       <a href="http://archive.apache.org/dist/jakarta/taglibs/standard/">
        available</a>.
       </font></td></tr>
 
@@ -259,7 +259,7 @@
         Final 1.0 release of Jakarta Taglibs's Standard Taglib,
         an implementation of the <b>JSP Standard Tag Library (JSTL)</b>,
     is now available for
-        <a href="http://www.apache.org/dist/jakarta/taglibs/releases/standard/">
+        <a href="http://archive.apache.org/dist/jakarta/taglibs/standard/">
         download</a>.
       </font></td></tr>
 
