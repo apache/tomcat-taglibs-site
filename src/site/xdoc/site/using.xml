@@ -30,7 +30,7 @@ structure:
     JAKARTA-TAGLIBS project as a whole, including this file.  The following
     documents are included:
     <ul>
-    <li><a href="binarydist.html">Using the JAKARTA-TAGLIBS Binary
+    <li><a href="using.html">Using the JAKARTA-TAGLIBS Binary
         Distribution</a> (this document)</li>
     <li><a href="legacybuilding.html">Building the old JAKARTA-TAGLIBS Source
         Distributions</a></li>
