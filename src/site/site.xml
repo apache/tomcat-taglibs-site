@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Apache Taglibs">
+  <bannerLeft>
+    <name>Tomcat</name>
+    <src>http://tomcat.apache.org/images/tomcat.gif</src>
+    <href>http://tomcat.apache.org/</href>
+  </bannerLeft>
+  <bannerRight>
+    <name>Apache Taglibs</name>
+    <src>http://tomcat.apache.org/taglibs/images/taglibs.gif</src>
+    <href>http://tomcat.apache.org/taglibs/</href>
+  </bannerRight>
+  <publishDate format="dd MMMM yyyy" position="left" />
+  <body>
+    <links>
+      <item name="ApacheCon"             href="http://www.apachecon.com/"/>
+      <item name="Apache"                href="http://www.apache.org"/>
+      <item name="Tomcat"                href="http://tomcat.apache.org/" />
+    </links>
+    <menu name="Apache Taglibs">
+      <item name="Home"                  href="index.html" />
+      <item name="Using"                 href="site/using.html" />
+      <item name="Tutorial"              href="site/tutorial.html" />
+      <item name="News Archives"         href="site/news.html" />
+    </menu>
+    <menu name="Our Taglibs">
+      <item name="RDC"                   href="rdc/" />
+      <item name="Standard"              href="standard/" />
+    </menu>
+    <menu name="Get Involved">
+      <item name="Security Issues"       href="http://tomcat.apache.org/security.html" />
+      <item name="Mailing Lists"         href="mail-lists.html" />
+      <item name="Bugs"                  href="http://tomcat.apache.org/bugreport.html" />
+      <item name="CI"                    href="integration.html" />
+      <item name="Wiki"                  href="http://wiki.apache.org/jakarta-taglibs/FrontPage" />
+    </menu>
+    <menu name="ASF">
+      <item name="License"               href="http://www.apache.org/licenses/LICENSE-2.0.html" />
+      <item name="Sponsorship"           href="http://www.apache.org/foundation/sponsorship.html" />
+      <item name="Thanks"                href="http://www.apache.org/foundation/thanks.html" />
+    </menu>
+  </body>
+</project>
