@@ -42,8 +42,55 @@
     <site>
       <id>apache.website</id>
       <name>Apache Website</name>
-      <url>scpexe://people.apache.org/www/taglibs.apache.org/taglibs/</url>
+      <url>scm:svn:https://svn.apache.org/repos/asf/tomcat/site/trunk/docs/taglibs</url>
     </site>
   </distributionManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <skipDeploy>true</skipDeploy>
+        </configuration>
+        <executions>
+          <execution>
+            <id>stage-for-scm-publish</id>
+            <phase>post-site</phase>
+            <goals>
+              <goal>stage</goal>
+            </goals>
+            <configuration>
+              <skipDeploy>false</skipDeploy>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-scm-publish-plugin</artifactId>
+        <version>1.0</version>
+        <configuration>
+          <tryUpdate>true</tryUpdate>
+          <checkinComment>Apache Taglib Main site deployment</checkinComment>
+          <ignorePathsToDelete>
+            <ignorePathToDelete>standard**</ignorePathToDelete>
+            <ignorePathToDelete>rdc**</ignorePathToDelete>
+          </ignorePathsToDelete>
+        </configuration>
+        <executions>
+          <execution>
+            <id>scm-publish</id>
+            <phase>site-deploy</phase>
+            <goals>
+              <goal>publish-scm</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
 
 </project>
