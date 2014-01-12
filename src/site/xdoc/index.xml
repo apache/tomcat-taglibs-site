@@ -28,8 +28,8 @@
      </p>
      <p>
       In particular, Apache Taglibs hosts the <a href="standard/">Apache Standard Taglib</a>, an implementation of the
-      <a href="http://java.sun.com/products/jsp/jstl">JSP Standard Tag Library specification</a>. Versions 1.0 and 1.1 
-      of JSTL are implemented, and a 1.2 implementation is in the works. 
+      <a href="http://www.oracle.com/technetwork/java/index-jsp-135995.html">JSP Standard Tag Library (JSTL) specification</a>. Versions 1.0, 1.1 and 1.2 
+      of JSTL are all implemented.
      </p>
     </section>
 
@@ -45,6 +45,12 @@
     <section name="News">
 
     <table border="0" cellspacing="5" cellpadding="5" width="100%">
+
+      <tr><td bgcolor="#CCCCCC"><b><font size="-1">2014/01/02</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
+    [<a href="../standard/">Standard</a>]
+      </font><font size="-1">
+        The Apache Standard Taglib 1.2.1, an implementation of JSTL 1.2, has been released.
+      </font></td></tr>
 
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">2009/06/07</font></b></td><td bgcolor="#CCCCCC"><font size="-1">[ALL]</font><font size="-1">
         The Standard and RDC Taglibs have moved over to Tomcat. All other taglibs back at Jakarta have been deprecated 
