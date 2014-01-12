@@ -11,6 +11,7 @@
     <href>http://tomcat.apache.org/taglibs/</href>
   </bannerRight>
   <publishDate format="dd MMMM yyyy" position="left" />
+  <version position="none"/>
   <body>
     <links>
       <item name="ApacheCon"             href="http://www.apachecon.com/"/>
@@ -31,7 +32,6 @@
       <item name="Security Issues"       href="http://tomcat.apache.org/security.html" />
       <item name="Mailing Lists"         href="mail-lists.html" />
       <item name="Bugs"                  href="http://tomcat.apache.org/bugreport.html" />
-      <item name="CI"                    href="integration.html" />
       <item name="Wiki"                  href="http://wiki.apache.org/jakarta-taglibs/FrontPage" />
     </menu>
     <menu name="ASF">
