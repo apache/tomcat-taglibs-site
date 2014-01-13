@@ -42,7 +42,7 @@
         <td>Standard 1.2.1</td>
         <td>JSTL 1.2</td>
         <td>Servlet 2.5, JavaServer Pages 2.1</td>
-        <td><a href="http://archive.apache.org/dist/tomcat/taglibs/taglibs-standard-1.2.1/">download</a></td>
+        <td><a href="http://archive.apache.org/dist/tomcat/taglibs/taglibs-standard-1.2.1/">download</a> (<a href="apidocs/">javadoc</a>)</td>
       </tr>
       <tr>
         <td>Standard 1.1</td>
