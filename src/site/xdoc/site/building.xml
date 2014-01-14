@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<document url="./sourcedist.xml">
+<document url="./building.xml">
 
   <properties>
     <title>Building Jakarta Taglibs</title>
@@ -9,26 +9,25 @@
 
 <section name="Prerequisites">
 
-  <p>To build Jakara Taglibs packages you need to install <a href="http://maven.apache.org">Maven 2</a>. </p>
+  <p>To build Jakara Taglibs packages you need to install <a href="http://maven.apache.org">Maven</a>. </p>
 
 </section>
 
-<section name="Building">
+<section name="Building Trunk">
 
-  <b>The following applies to trunk and any releases containing a pom.xml. If the release contains a build.xml, refer to the <a href="legacybuilding.html">Legacy Building</a> page. </b>
+  <p>To checkout and build the latest code in trunk, run: </p>
 
-  <p>Until we release the <i>Parent POM</i>, you will first need to svn checkout the 
-     <a href="http://svn.apache.org/repos/asf/jakarta/taglibs/proper/taglibs-parent/trunk">taglibs-parent</a>:</p>
+  <ul>
+    <li><code>svn co https://svn.apache.org/repos/asf/tomcat/taglibs/trunks apache-taglibs</code></li>
+    <li><code>cd apache-taglibs</code></li>
+    <li><code>mvn clean install</code></li>
+  </ul>
 
-  <pre>svn co https://svn.apache.org/repos/asf/jakarta/taglibs/proper/taglibs-parent/trunk taglibs-parent</pre>
-
-  <p>Then you should execute <code>mvn clean install</code>. Once you have done this you are ready to build the taglib. </p>
-
-  <p>Obtain your taglib, either from a source download or from svn. To build a taglib, execute <code>mvn clean package</code>. </p>
+  <p>To build only one of the taglibs, checkout the <code>trunk/</code> directory for the subcomponent at <code><a href="https://svn.apache.org/repos/asf/tomcat/taglibs/">https://svn.apache.org/repos/asf/tomcat/taglibs/</a></code> and run <code>mvn clean install</code>. </p>
 
 </section>
 
-<section name="Building the site">
+<section name="Building &amp; Deploying the Site">
 
   <p>The main site is built by checking out the site/ directory: </p>
 
@@ -36,13 +35,15 @@
 
   <p>Taglib specific sites are built by directly from that taglib. </p>
 
-  <p>To build either - execute <code>mvn clean site</code>. </p>
+  <p>To build, run <code>mvn clean site</code>. </p>
+
+  <p>The sites are deployed by copying their source onto the Tomcat site's docs directory, located in the Tomcat site project: <a href="https://svn.apache.org/repos/asf/tomcat/site/trunk">https://svn.apache.org/repos/asf/tomcat/site/trunk</a>. It's not a very automated solution. </p>
 
 </section>
 
 <section name="Releasing">
 
-    <p>To build the tar.gz or .zip for a Taglibs release, execute <code>mvn clean assembly:assembly</code>. </p>
+    <p>To build the tar.gz or .zip for a Taglibs release, run <code>mvn clean assembly:assembly</code>. </p>
 
 </section>
 
