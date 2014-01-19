@@ -47,7 +47,7 @@
     <table border="0" cellspacing="5" cellpadding="5" width="100%">
 
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">2014/01/02</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
-    [<a href="../standard/">Standard</a>]
+    [<a href="standard/">Standard</a>]
       </font><font size="-1">
         The Apache Standard Taglib 1.2.1, an implementation of JSTL 1.2, has been released.
       </font></td></tr>
