@@ -20,7 +20,6 @@
     </links>
     <menu name="Apache Taglibs">
       <item name="Home"                  href="index.html" />
-      <item name="Using"                 href="site/using.html" />
       <item name="Tutorial"              href="site/tutorial.html" />
       <item name="Building/Source"       href="site/building.html" />
       <item name="News Archives"         href="site/news.html" />
