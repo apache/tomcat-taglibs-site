@@ -105,7 +105,7 @@
     <ul>
       <li><a href="http://www.manning.com/bayern/"><i>JSTL in Action</i></a>, Shawn Bayern, Manning</li>
       <li><a href="http://oreilly.com/catalog/9781565927469/"><i>JavaServer Pages</i></a>, Hans Bergsten, O'Reilly</li>
-      <li><a href="http://www.sun.com/books/catalog/geary_corejstl.xml"><i>Core JSTL: Mastering the JSP Standard Tag Library</i></a>, David Geary, Sun Microsystems Press</li>
+      <li><i>Core JSTL: Mastering the JSP Standard Tag Library</i>, David Geary, Sun Microsystems Press</li>
     </ul>
 
   </section>
