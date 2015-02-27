@@ -46,6 +46,12 @@
 
     <table border="0" cellspacing="5" cellpadding="5" width="100%">
 
+      <tr><td bgcolor="#CCCCCC"><b><font size="-1">2015/02/20</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
+    [<a href="standard/">Standard</a>]
+      </font><font size="-1">
+        The Apache Standard Taglib 1.2.3, a minor bugfix version, has been released.
+      </font></td></tr>
+
       <tr><td bgcolor="#CCCCCC"><b><font size="-1">2014/01/02</font></b></td><td bgcolor="#CCCCCC"><font size="-1">
     [<a href="standard/">Standard</a>]
       </font><font size="-1">

@@ -21,6 +21,8 @@
   </properties>
   <body>
 
+  <release version="1.2.3" date="2015-02-20" description="Minor bugfix update"/>
+  <release version="1.2.2" date="2015-02-08" description="Release candidate withdrawn"/>
   <release version="1.2.1" date="2014-01-02" description="First release of our implementation of JSTL 1.2"/>
   <release version="1.2.0" description="JSTL 1.2 implementation - failed vote"/>
 
